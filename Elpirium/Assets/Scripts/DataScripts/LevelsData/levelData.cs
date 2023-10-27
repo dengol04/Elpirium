@@ -9,8 +9,13 @@ public class levelData : ScriptableObject
     private string[] _way;
     [SerializeField]
     private Sprite[] _groundSprites;
+    [SerializeField]
+    private uint _fieldHeight, _fieldWidth;
+
 
     public string[] Way => _way;
     public Sprite[] GroundSprites => _groundSprites;
+    public uint FieldHeight => _fieldHeight;
+    public uint FieldWidth => _fieldWidth;
 }
 
