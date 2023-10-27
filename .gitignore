@@ -2,7 +2,7 @@ Library/
 Temp/
 obj/
 Logs/
-.log
-.csproj
-.vsconfig
-.sln
+*.log
+*.csproj
+*.vsconfig
+*.sln
