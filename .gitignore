@@ -12,6 +12,7 @@ ExportedObj/
 .consulo/
 .log
 .meta
+.vsconfig
 *.csproj
 *.unityproj
 *.sln
