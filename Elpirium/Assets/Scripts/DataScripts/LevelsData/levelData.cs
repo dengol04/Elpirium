@@ -11,11 +11,16 @@ public class levelData : ScriptableObject
     private Sprite[] _groundSprites;
     [SerializeField]
     private uint _fieldHeight, _fieldWidth;
+    [SerializeField]
+    private uint _xPosSwaner, _yPosSpawner;
 
 
     public string[] Way => _way;
     public Sprite[] GroundSprites => _groundSprites;
     public uint FieldHeight => _fieldHeight;
     public uint FieldWidth => _fieldWidth;
+    public (uint, uint) xyPosSpawner => (_xPosSwaner, _yPosSpawner);
+
+
 }
 
