@@ -190,6 +190,7 @@ MonoBehaviour:
   _groundTilesParent: {fileID: 320554145}
   _enemySpawnerPref: {fileID: 7616859629917773297, guid: c158feb33a8b18b4983a58b34ba5343d, type: 3}
   _wayPointPref: {fileID: 7843635030625186127, guid: 0ccacf2d03252674fabbc98d1229d0a3, type: 3}
+  _lastWayPointPref: {fileID: 1674265921651430430, guid: 2156403f16a63d547be31ef3c7f3e83d, type: 3}
   _wayPointsParent: {fileID: 1777432785}
 --- !u!81 &769921155
 AudioListener:

@@ -31,5 +31,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2f27952fc36745441880e19f0e1c7864, type: 3}
   _fieldHeight: 7
   _fieldWidth: 11
-  _xPosSwaner: 5
+  _xPosSpawner: 5
   _yPosSpawner: 0
+  _initialDirection: {x: 0, y: 5}
+  _xPosLastWPoint: 10
+  _yPosLastWPoint: 4
+  _xWayPointsPos: 05000000
+  _yWayPointsPos: 04000000

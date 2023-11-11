@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2984063753270184837}
   - component: {fileID: 2196195580302433589}
   m_Layer: 0
-  m_Name: swapPointPref
+  m_Name: spawnPointPref
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c876b670f6549f4895d366775fa8311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialDirection: 1
+  _initialDirection: {x: 0, y: 0}
+  _warderPref: {fileID: 5349110288667500601, guid: ce9fc1e57fd531342b4021ce75dc8b21, type: 3}

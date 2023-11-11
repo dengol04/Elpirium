@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IMovable
 {
-    void Move(float speed, DirectionsEnum direction);
+    void Move();
 
-    DirectionsEnum Direction { get; set; }
+    Vector2 Direction { get; set; }
 }

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WayPoint : MonoBehaviour
 {
-    private DirectionsEnum _newDirection;
+    [SerializeField]
+    private Vector2 _newDirection;
 
-    public DirectionsEnum newDirection => _newDirection;
+    public Vector2 newDirection => _newDirection;
 
-    public void setNewDirection(DirectionsEnum newDirection)
+    public void setNewDirection(Vector2 newDirection)
     {
         _newDirection = newDirection;
     }

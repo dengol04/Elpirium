@@ -1,10 +1,21 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
     [SerializeField]
-    private DirectionsEnum _initialDirection;
+    private Vector2 _initialDirection;
+    [SerializeField]
+    private GameObject _warderPref;
+    [SerializeField]
+    private float _timeBtwSpawn;
+    public Vector2 initialDirection => _initialDirection;
+
+    public void setInitialDirection(Vector2 initialDirection)
+    {
+        _initialDirection = initialDirection;
+    }
 
     public void setDirection(GameObject somebody)
     {
@@ -15,10 +26,25 @@ public class SpawnPoint : MonoBehaviour
         somebody.GetComponent<IMovable>().Direction = _initialDirection;
     }
 
-    public void spawnEnemy(Enemy enemy, GameObject enemyPref)
+    private void Update()
     {
-        GameObject newEnemy = Instantiate(enemyPref);
-        newEnemy.transform.position = this.GetComponent<Transform>().position;
-        setDirection(newEnemy);
+        if (_timeBtwSpawn <= 0)
+        {
+            StartCoroutine(spawnEnemy());
+            _timeBtwSpawn = 4;
+        }
+
+        _timeBtwSpawn -= Time.deltaTime;
     }
+
+    IEnumerator spawnEnemy()
+    {
+        GameObject newEnemy = Instantiate(_warderPref);
+        newEnemy.transform.position = transform.position;
+        Debug.Log("Warder has swapned");
+        setDirection(newEnemy);
+
+        yield return new WaitForSeconds(0.5f);
+    }
+
 }
