@@ -1,15 +1,17 @@
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
 
 .vs/
 
 ExportedObj/
 .consulo/
+.log
+.meta
 *.csproj
 *.unityproj
 *.sln
@@ -30,7 +32,7 @@ ExportedObj/
 *.unitypackage
 *.app
 
-/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
-/[Aa]ssets/Plugins/Editor/JetBrains*
->>>>>>> 69f1737ed0f97162b04510da8522b284685ff796
+[Aa]ssets/Plugins/Editor/JetBrains*
+
