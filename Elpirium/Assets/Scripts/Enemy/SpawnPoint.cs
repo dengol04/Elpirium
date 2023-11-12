@@ -1,70 +1,62 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    //[SerializeField]
-    //private Vector2 _initialDirection;
-    //[SerializeField]
-    //private GameObject _warderPref;
-    //[SerializeField]
-    private GameObject[] _enemiesPrefs;
+    
     [SerializeField]
     private float _timeBtwSpawn;
-    //[SerializeField]
+    
+    [SerializeField]
+    private levelData _dataLevel;
+
+    [SerializeField]
+    private LevelWavesData _dataWaves;
+
+    private GameObject[] _enemiesPrefs;
+
     private GameObject _enemyParent;
+
+    private List<List<int>> eachTypeOfEnemyCountLst;
 
     private void Start()
     {
         _enemyParent = GameObject.Find("enemies");
 
-        _enemiesPrefs = GameObject.Find("Main Camera").GetComponent<levelCreator>().DataLevel.EnemyPrefs;
-    }
+        _enemiesPrefs = _dataLevel.EnemyPrefs;
 
-    /*public Vector2 initialDirection => _initialDirection;
+        eachTypeOfEnemyCountLst = new List<List<int>>();//_dataWaves.eachTypeOfEnemyCount.Length);
 
-    public void setInitialDirection(Vector2 initialDirection)
-    {
-        _initialDirection = initialDirection;
-    }*/
-
-    /*public void setDirection(GameObject somebody)
-    {
-        if (!somebody.TryGetComponent<IMovable>(out var t))
-            throw new InvalidOperationException("Данный объект не может двигаться");
-
-
-        somebody.GetComponent<IMovable>().Direction = _initialDirection;
-    }*/
-
-    private void Update()
-    {
-        if (_timeBtwSpawn <= 0)
+        for (int i = 0; i < _dataWaves.eachTypeOfEnemyCount.Length; ++i)
         {
-            StartCoroutine(spawnEnemy(1, EnemyType.Warder));
-            _timeBtwSpawn = 4;
+            eachTypeOfEnemyCountLst.Add(new List<int>());
+            string oneWaweEnemyData = _dataWaves.eachTypeOfEnemyCount[i];
+            string[] oneWaweEnemyDataUnits = oneWaweEnemyData.Split(" ");
+            for (int j = 0; j < oneWaweEnemyDataUnits.Length; ++j)
+            {               
+                if (oneWaweEnemyDataUnits[j] != "")
+                    eachTypeOfEnemyCountLst[i].Add(int.Parse(oneWaweEnemyDataUnits[j]));
+            }
         }
 
-        _timeBtwSpawn -= Time.deltaTime;
+        Debug.Log(eachTypeOfEnemyCountLst.Count);
+
+        StartCoroutine(wavesSpawn());
+
     }
 
-    /*IEnumerator spawnEnemy()
-    {
-        GameObject newEnemy = Instantiate(_warderPref);
-        newEnemy.transform.SetParent(_enemyParent.transform, false);
-        newEnemy.transform.position = transform.position;//gameObject.transform.position;
-        Debug.Log("Warder has swapned");
-        //setDirection(newEnemy);
-
-        yield return new WaitForSeconds(0.5f);
-    }*/
+    
 
     IEnumerator spawnEnemy(int count, EnemyType typeOfEnemy)
     {
         for (int i = 0; i < count; ++i)
         {
+            
+
             GameObject newEnemy = new GameObject();
             switch (typeOfEnemy)
             {
@@ -77,10 +69,26 @@ public class SpawnPoint : MonoBehaviour
             newEnemy.transform.SetParent(_enemyParent.transform, false);
             newEnemy.transform.position = transform.position;
             Debug.Log($"{typeOfEnemy.ToString()} has spawned");
+
+            yield return new WaitForSeconds(2f);
         }
 
+        yield break;
+    }
 
-        yield return new WaitForSeconds(0.5f);
+    IEnumerator wavesSpawn()
+    {
+        for (int i = 0; i < eachTypeOfEnemyCountLst.Count; ++i)
+        {
+            for (int j = 1; j < eachTypeOfEnemyCountLst[i].Count; j += 2)
+                StartCoroutine(spawnEnemy(eachTypeOfEnemyCountLst[i][j], (EnemyType)eachTypeOfEnemyCountLst[i][j - 1]));
+
+            Debug.Log($"{i} wave is over");
+
+            yield return new WaitForSeconds(10f);
+        }
+
+        yield break;
     }
 
 }

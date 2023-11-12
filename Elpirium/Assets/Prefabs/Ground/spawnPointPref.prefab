@@ -41,10 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7616859629917773297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c876b670f6549f4895d366775fa8311, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a1b532406da1914d88ea43b6c324d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _warderPref: {fileID: 5349110288667500601, guid: ce9fc1e57fd531342b4021ce75dc8b21, type: 3}
-  _enemiesPrefs:
-  - {fileID: 5349110288667500601, guid: ce9fc1e57fd531342b4021ce75dc8b21, type: 3}
   _timeBtwSpawn: 0
+  _dataLevel: {fileID: 11400000, guid: 192bcc16537326945bcd4f421afc2197, type: 2}
+  _dataWaves: {fileID: 11400000, guid: 9029aa4190fd3f648a1b92387a5a4e77, type: 2}

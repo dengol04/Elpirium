@@ -23,6 +23,8 @@ public class levelData : ScriptableObject
     private int[] _numsOfWPoints;
     [SerializeField]
     private GameObject[] _enemyPrefs;
+    [SerializeField]
+    private int[] _wavesEnemyCount;
 
 
     public string[] Way => _way;

@@ -188,9 +188,9 @@ MonoBehaviour:
   _dataLevel: {fileID: 11400000, guid: 192bcc16537326945bcd4f421afc2197, type: 2}
   _cellPref: {fileID: 3285831135113341554, guid: 75ba8f37501ce6a4d9a07fa4e84be453, type: 3}
   _groundTilesParent: {fileID: 320554145}
-  _enemySpawnerPref: {fileID: 7616859629917773297, guid: c158feb33a8b18b4983a58b34ba5343d, type: 3}
-  _wayPointPref: {fileID: 7843635030625186127, guid: 0ccacf2d03252674fabbc98d1229d0a3, type: 3}
-  _lastWayPointPref: {fileID: 1674265921651430430, guid: 2156403f16a63d547be31ef3c7f3e83d, type: 3}
+  _enemySpawnerPref: {fileID: 7616859629917773297, guid: 523b4e7a30a4b634195f84e9f9c1a34b, type: 3}
+  _wayPointPref: {fileID: 7843635030625186127, guid: b58206c7181cf8447b48e756ee65f1d2, type: 3}
+  _lastWayPointPref: {fileID: 1674265921651430430, guid: d1f6f687bb0c1b5439745c06d5e20171, type: 3}
   _wayPointsParent: {fileID: 1777432785}
 --- !u!81 &769921155
 AudioListener:
