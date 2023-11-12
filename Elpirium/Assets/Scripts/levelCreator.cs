@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,15 +20,15 @@ public class levelCreator : MonoBehaviour
     private GameObject _wayPointsParent;
 
 
-    private List<GameObject> _wayPoints = new List<GameObject>(_);
+    private List<GameObject> _wayPoints = new List<GameObject>();
 
     public List<GameObject> wayPoints => _wayPoints;
 
     private void wayPointsInitial()
     {
-        for (int i = 0; i < _dataLevel.xWayPointsPos.Length; ++i)
+        for (int i = 0; i < _dataLevel.numsOfWPoints.Length + 2; ++i)
         {
-            wayPoints.Add(null);
+            _wayPoints.Add(null);
         }
     }
 
@@ -44,7 +46,11 @@ public class levelCreator : MonoBehaviour
 
     void Start()
     {
+        wayPointsInitial();
+        Debug.Log(_wayPoints.Count);
+
         levelBuilding();
+        
         //setDirectionsToWayPoints();
     }
 
@@ -53,40 +59,44 @@ public class levelCreator : MonoBehaviour
         Vector2 cellPosVector = Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height));
 
         int cellTypeId;
-        
+
+        int count = 0;
 
         for (int i = 0; i <  _dataLevel.FieldHeight ; ++i)
             for(int j = 0; j < _dataLevel.FieldWidth; ++j)
             {
+                ++count;
+
                 cellTypeId = int.Parse(_dataLevel.Way[i][j].ToString());
 
                 // ячейка со спавнером
                 if (j == _dataLevel.xyPosSpawner.Item1 && i == _dataLevel.xyPosSpawner.Item2)
                 {
-                    // если последний поинт
-                    if (j == _dataLevel.xyPosLastWPoint.Item1 && i == _dataLevel.xyPosLastWPoint.Item2)
-                        cellInstantiate(j, i, cellPosVector, cellTypeId, true, false, true);
-                    else
-                        cellInstantiate(j, i, cellPosVector, cellTypeId, true, false, false);
+                    cellInstantiate(j, i, cellPosVector, cellTypeId, true, false);
 
                     continue;
                 }
                 // если поворот
                 if (cellTypeId > 3)
                 {
-                    cellInstantiate(j, i, cellPosVector, cellTypeId, false, true, false);
+
+                    // если последний поинт
+                    if (j == _dataLevel.xyPosLastWPoint.Item1 && i == _dataLevel.xyPosLastWPoint.Item2)
+                        cellInstantiate(j, i, cellPosVector, cellTypeId, false, true, true);
+                    else
+                        cellInstantiate(j, i, cellPosVector, cellTypeId, false, true, false, count);
 
                     continue;
                 }
 
                 
 
-                cellInstantiate(j, i, cellPosVector, cellTypeId, false, false, false);
+                cellInstantiate(j, i, cellPosVector, cellTypeId, false, false);
             }
     }
 
 
-    void cellInstantiate(int x, int y, Vector2 cellPosVector, int cellTypeId, bool isSpawnPoint, bool isWayPoint, bool isLastWayPoint)
+    void cellInstantiate(int x, int y, Vector2 cellPosVector, int cellTypeId, bool isSpawnPoint, bool isWayPoint, bool isLastWayPoint = false, int numOfCell = 0)
     {
         GameObject newCell = Instantiate(_cellPref);
         newCell.transform.SetParent(_groundTilesParent.transform, false);
@@ -109,19 +119,28 @@ public class levelCreator : MonoBehaviour
 
             spawnPoint.GetComponent<SpawnPoint>().setInitialDirection(_dataLevel.initialDirection);
 
-            _wayPoints.Insert(0, spawnPoint);
+            _wayPoints[0] = spawnPoint;
             Debug.Log("Added spawn point");
         }
 
         if (isWayPoint)
         {
-            GameObject wayPoint = isLastWayPoint ? Instantiate(_lastWayPointPref) : Instantiate(_wayPointPref);
+            GameObject wayPoint = new GameObject();
+            //= isLastWayPoint ? Instantiate(_lastWayPointPref) : Instantiate(_wayPointPref);
+            if (isLastWayPoint)
+                wayPoint = Instantiate(_lastWayPointPref);
+            else
+                wayPoint = Instantiate(_wayPointPref);
+
             wayPoint.transform.SetParent(_wayPointsParent.transform, false);
             wayPoint.transform.position = new Vector3(newCell.transform.position.x + newCell.GetComponent<SpriteRenderer>().bounds.size.x / 2,
                                                       newCell.transform.position.y + newCell.GetComponent<SpriteRenderer>().bounds.size.y / 2,
                                                       newCell.transform.position.z);
+
             if (isLastWayPoint)
-                _wayPoints.Insert(_wayPoints.Count, wayPoint);
+                _wayPoints[_wayPoints.Count - 1] = wayPoint;
+            else
+                _wayPoints[_dataLevel.numsOfWPoints.ToList().FindIndex(x => x == 50) + 1] = wayPoint;
         }
     }
     

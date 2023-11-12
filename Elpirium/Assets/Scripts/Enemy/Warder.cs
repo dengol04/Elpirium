@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Warder : Enemy, IMovable
@@ -20,22 +21,23 @@ public class Warder : Enemy, IMovable
     {
         _direction = GameObject.Find("spawnPointPref(Clone)").GetComponent<SpawnPoint>().initialDirection;
         _nextWaypoint = 1;
+        mainCameraWPoints = GameObject.Find("Main Camera").GetComponent<levelCreator>().wayPoints;
     }
 
     public void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, GameObject.Find("Main Camera").GetComponent<levelCreator>().wayPoints[_nextWaypoint].transform.position, _speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, mainCameraWPoints[_nextWaypoint].transform.position, _speed * Time.deltaTime);
     }
 
-    public void changeDirection()
-    {
-        var mainCamera = GameObject.Find("Main Camera");
+    List<GameObject> mainCameraWPoints;
 
-        if (Vector2.Distance(transform.position, mainCamera.GetComponent<levelCreator>().wayPoints[_nextWaypoint].transform.position) < 0.1f)
+    public void changeDirection()
+    { 
+        if (Vector2.Distance(transform.position, mainCameraWPoints[_nextWaypoint].transform.position) < 0.1f)
         {
-            if (_nextWaypoint + 1 < mainCamera.GetComponent<levelCreator>().wayPoints.Count)
+            if (_nextWaypoint + 1 < mainCameraWPoints.Count)
                 _nextWaypoint++;
-            _direction = mainCamera.GetComponent<levelCreator>().wayPoints[_nextWaypoint].GetComponent<WayPoint>().newDirection;
+            _direction = mainCameraWPoints[_nextWaypoint].GetComponent<WayPoint>().newDirection;
         }
     }
 
@@ -78,6 +80,14 @@ public class Warder : Enemy, IMovable
     void Update()
     {
         Move();
-        changeDirection();
+        //changeDirection();
+        //Win();
+    }
+
+
+    public override void Win()
+    {
+        if (Vector2.Distance(transform.position, mainCameraWPoints.Last().transform.position) < 0.1f)
+            Die();
     }
 }

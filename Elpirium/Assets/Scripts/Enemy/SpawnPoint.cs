@@ -10,6 +10,9 @@ public class SpawnPoint : MonoBehaviour
     private GameObject _warderPref;
     [SerializeField]
     private float _timeBtwSpawn;
+    [SerializeField]
+    private GameObject _enemyParent;
+
     public Vector2 initialDirection => _initialDirection;
 
     public void setInitialDirection(Vector2 initialDirection)
@@ -41,6 +44,7 @@ public class SpawnPoint : MonoBehaviour
     {
         GameObject newEnemy = Instantiate(_warderPref);
         newEnemy.transform.position = transform.position;
+        //newEnemy.transform.SetParent(_enemyParent.transform, false);
         Debug.Log("Warder has swapned");
         setDirection(newEnemy);
 

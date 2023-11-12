@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -17,11 +18,9 @@ public class levelData : ScriptableObject
     [SerializeField]
     private Vector2 _initialDirection;
     [SerializeField]
-    private uint _xPosLastWPoint, _yPosLastWPoint;
+    private int _xPosLastWPoint, _yPosLastWPoint;
     [SerializeField]
-    private int[] _xWayPointsPos;
-    [SerializeField]
-    private int[] _yWayPointsPos;
+    private int[] _numsOfWPoints;
 
     public string[] Way => _way;
     public Sprite[] GroundSprites => _groundSprites;
@@ -29,9 +28,8 @@ public class levelData : ScriptableObject
     public uint FieldWidth => _fieldWidth;
     public (uint, uint) xyPosSpawner => (_xPosSpawner, _yPosSpawner);
     public Vector2 initialDirection => _initialDirection;
-    public (uint, uint) xyPosLastWPoint => (_xPosLastWPoint, _yPosLastWPoint);
-    public int[] xWayPointsPos => _xWayPointsPos;
-    public int[] yWayPointsPos => _yWayPointsPos;
+    public (int, int) xyPosLastWPoint => (_xPosLastWPoint, _yPosLastWPoint);
+    public int[] numsOfWPoints => _numsOfWPoints;
 
 
 }
