@@ -21,6 +21,9 @@ public class levelData : ScriptableObject
     private int _xPosLastWPoint, _yPosLastWPoint;
     [SerializeField]
     private int[] _numsOfWPoints;
+    [SerializeField]
+    private GameObject[] _enemyPrefs;
+
 
     public string[] Way => _way;
     public Sprite[] GroundSprites => _groundSprites;
@@ -30,6 +33,7 @@ public class levelData : ScriptableObject
     public Vector2 initialDirection => _initialDirection;
     public (int, int) xyPosLastWPoint => (_xPosLastWPoint, _yPosLastWPoint);
     public int[] numsOfWPoints => _numsOfWPoints;
+    public GameObject[] EnemyPrefs => _enemyPrefs;
 
 
 }

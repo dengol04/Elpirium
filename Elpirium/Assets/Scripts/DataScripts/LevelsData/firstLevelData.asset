@@ -33,7 +33,9 @@ MonoBehaviour:
   _fieldWidth: 11
   _xPosSpawner: 5
   _yPosSpawner: 0
-  _initialDirection: {x: 0, y: 5}
-  _xPosLastWPoint: 6
-  _yPosLastWPoint: -4
+  _initialDirection: {x: 5, y: 5}
+  _xPosLastWPoint: 10
+  _yPosLastWPoint: 4
   _numsOfWPoints: 32000000
+  _enemyPrefs:
+  - {fileID: 5349110288667500601, guid: ce9fc1e57fd531342b4021ce75dc8b21, type: 3}

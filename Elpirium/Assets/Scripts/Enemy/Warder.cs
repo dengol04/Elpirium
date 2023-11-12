@@ -19,7 +19,7 @@ public class Warder : Enemy, IMovable
 
     void Start()
     {
-        _direction = GameObject.Find("spawnPointPref(Clone)").GetComponent<SpawnPoint>().initialDirection;
+        _direction = GameObject.Find("spawnPointPref(Clone)").transform.position;//GetComponent<SpawnPoint>().initialDirection;
         _nextWaypoint = 1;
         mainCameraWPoints = GameObject.Find("Main Camera").GetComponent<levelCreator>().wayPoints;
     }
@@ -33,7 +33,7 @@ public class Warder : Enemy, IMovable
 
     public void changeDirection()
     { 
-        if (Vector2.Distance(transform.position, mainCameraWPoints[_nextWaypoint].transform.position) < 0.1f)
+        if (Vector2.Distance(transform.position, mainCameraWPoints[_nextWaypoint].transform.position) < 0.6f)
         {
             if (_nextWaypoint + 1 < mainCameraWPoints.Count)
                 _nextWaypoint++;
@@ -80,8 +80,8 @@ public class Warder : Enemy, IMovable
     void Update()
     {
         Move();
-        //changeDirection();
-        //Win();
+        changeDirection();
+        Win();
     }
 
 

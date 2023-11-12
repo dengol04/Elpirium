@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c876b670f6549f4895d366775fa8311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialDirection: {x: 0, y: 0}
   _warderPref: {fileID: 5349110288667500601, guid: ce9fc1e57fd531342b4021ce75dc8b21, type: 3}
+  _enemiesPrefs:
+  - {fileID: 5349110288667500601, guid: ce9fc1e57fd531342b4021ce75dc8b21, type: 3}
+  _timeBtwSpawn: 0

@@ -20,6 +20,8 @@ public class levelCreator : MonoBehaviour
     private GameObject _wayPointsParent;
 
 
+    public levelData DataLevel => _dataLevel;
+
     private List<GameObject> _wayPoints = new List<GameObject>();
 
     public List<GameObject> wayPoints => _wayPoints;
@@ -50,7 +52,13 @@ public class levelCreator : MonoBehaviour
         Debug.Log(_wayPoints.Count);
 
         levelBuilding();
-        
+
+        if (wayPoints[wayPoints.Count - 1] == null)
+            throw new ArgumentNullException("Нет последнего поинта");
+
+        if (wayPoints.Any(x => x == null))
+            throw new ArgumentNullException("Недозаполнил список поинтов");
+
         //setDirectionsToWayPoints();
     }
 
@@ -73,19 +81,18 @@ public class levelCreator : MonoBehaviour
                 if (j == _dataLevel.xyPosSpawner.Item1 && i == _dataLevel.xyPosSpawner.Item2)
                 {
                     cellInstantiate(j, i, cellPosVector, cellTypeId, true, false);
-
                     continue;
                 }
                 // если поворот
                 if (cellTypeId > 3)
                 {
-
-                    // если последний поинт
-                    if (j == _dataLevel.xyPosLastWPoint.Item1 && i == _dataLevel.xyPosLastWPoint.Item2)
-                        cellInstantiate(j, i, cellPosVector, cellTypeId, false, true, true);
-                    else
-                        cellInstantiate(j, i, cellPosVector, cellTypeId, false, true, false, count);
-
+                    cellInstantiate(j, i, cellPosVector, cellTypeId, false, true, false, count);
+                    continue;
+                }
+                // если последний поинт
+                if (j == _dataLevel.xyPosLastWPoint.Item1 && i == _dataLevel.xyPosLastWPoint.Item2)
+                {
+                    cellInstantiate(j, i, cellPosVector, cellTypeId, false, true, true);
                     continue;
                 }
 
@@ -117,7 +124,7 @@ public class levelCreator : MonoBehaviour
                                                         newCell.transform.position.y + newCell.GetComponent<SpriteRenderer>().bounds.size.y / 2,
                                                         newCell.transform.position.z);
 
-            spawnPoint.GetComponent<SpawnPoint>().setInitialDirection(_dataLevel.initialDirection);
+            //spawnPoint.GetComponent<SpawnPoint>().setInitialDirection(_dataLevel.initialDirection);
 
             _wayPoints[0] = spawnPoint;
             Debug.Log("Added spawn point");
