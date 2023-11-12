@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class levelCreator : MonoBehaviour
 {
@@ -10,6 +10,8 @@ public class levelCreator : MonoBehaviour
     private levelData _dataLevel;
     [SerializeField]
     private GameObject _cellPref;
+    [SerializeField]
+    private GameObject _tileWithButtonPref;
     [SerializeField]
     private GameObject _parent;
     private enum TileTypes
@@ -27,6 +29,8 @@ public class levelCreator : MonoBehaviour
     void Start()
     { 
         levelBuilding();
+
+        
     }
 
     void levelBuilding()
@@ -46,7 +50,7 @@ public class levelCreator : MonoBehaviour
 
     void cellInstantiate(int x, int y, Vector2 cellPosVector, int cellTypeId)
     {
-        GameObject newCell = Instantiate(_cellPref);
+        GameObject newCell = cellTypeId == 1 ? Instantiate(_tileWithButtonPref) : Instantiate(_cellPref);
         newCell.transform.SetParent(_parent.transform, false);
 
         newCell.GetComponent<SpriteRenderer>().sprite = _dataLevel.GroundSprites[cellTypeId];
