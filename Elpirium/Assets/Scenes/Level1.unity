@@ -193,6 +193,7 @@ MonoBehaviour:
   _wayPointPref: {fileID: 7843635030625186127, guid: e3c24e5aa81c07e4e8fe06a600d5c3bf, type: 3}
   _lastWayPointPref: {fileID: 1674265921651430430, guid: 50873c3a7538da946887e60bca6aecdf, type: 3}
   _wayPointsParent: {fileID: 1777432785}
+  _tileWithButtonPref: {fileID: 479542891664125374, guid: 222f5bcac6eadd441985c43082ce1a30, type: 3}
 --- !u!81 &769921155
 AudioListener:
   m_ObjectHideFlags: 0

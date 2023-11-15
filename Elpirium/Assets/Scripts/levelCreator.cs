@@ -18,6 +18,8 @@ public class levelCreator : MonoBehaviour
     private GameObject _enemySpawnerPref, _wayPointPref, _lastWayPointPref;
     [SerializeField]
     private GameObject _wayPointsParent;
+    [SerializeField]
+    private GameObject _tileWithButtonPref;
 
 
     public levelData DataLevel => _dataLevel;
@@ -105,7 +107,8 @@ public class levelCreator : MonoBehaviour
 
     void cellInstantiate(int x, int y, Vector2 cellPosVector, int cellTypeId, bool isSpawnPoint, bool isWayPoint, bool isLastWayPoint = false, int numOfCell = 0)
     {
-        GameObject newCell = Instantiate(_cellPref);
+        GameObject newCell = cellTypeId == 1 ? Instantiate(_tileWithButtonPref) : Instantiate(_cellPref);
+
         newCell.transform.SetParent(_groundTilesParent.transform, false);
 
         newCell.GetComponent<SpriteRenderer>().sprite = _dataLevel.GroundSprites[cellTypeId];
