@@ -3,41 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Warder : Enemy, IMovable
+public class Warder : Enemy
 {
     [SerializeField]
     float _speed, _health;
     [SerializeField]
     int _damage;
-    //[SerializeField]
-    //Sprite _sprite;
-
-
-    private Vector2 _direction;
 
     private int _nextWaypoint;
 
+    private GameObject mainCamera;
+
     void Start()
     {
-        _direction = GameObject.Find("spawnPointPref(Clone)").transform.position;//GetComponent<SpawnPoint>().initialDirection;
         _nextWaypoint = 1;
-        mainCameraWPoints = GameObject.Find("Main Camera").GetComponent<levelCreator>().wayPoints;
+        mainCamera = GameObject.Find("Main Camera");
     }
 
     public void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, mainCameraWPoints[_nextWaypoint].transform.position, _speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, mainCamera.GetComponent<levelCreator>().wayPoints[_nextWaypoint].transform.position, _speed * Time.deltaTime);
     }
 
-    List<GameObject> mainCameraWPoints;
+    
 
     public void changeDirection()
     { 
-        if (Vector2.Distance(transform.position, mainCameraWPoints[_nextWaypoint].transform.position) < 0.6f)
+        if (Vector2.Distance(transform.position, mainCamera.GetComponent<levelCreator>().wayPoints[_nextWaypoint].transform.position) < 0.6f)
         {
-            if (_nextWaypoint + 1 < mainCameraWPoints.Count)
+            if (_nextWaypoint + 1 < mainCamera.GetComponent<levelCreator>().wayPoints.Count)
                 _nextWaypoint++;
-            _direction = mainCameraWPoints[_nextWaypoint].GetComponent<WayPoint>().newDirection;
         }
     }
 
@@ -50,26 +45,14 @@ public class Warder : Enemy, IMovable
             _health -= damage;
     }
 
-    public override void doDamage(int damage)
+    public override void doDamage()
     {
-
+        mainCamera.GetComponent<baseHealth>().getDamage(_damage);
     }
 
     public override void Die()
     {
         Destroy(gameObject);
-    }
-
-    public Vector2 Direction
-    {
-        get
-        {
-            return _direction;
-        }
-        set
-        {
-            _direction = value;
-        }
     }
 
     public override float Health => _health;
@@ -87,7 +70,10 @@ public class Warder : Enemy, IMovable
 
     public override void Win()
     {
-        if (Vector2.Distance(transform.position, mainCameraWPoints.Last().transform.position) < 0.1f)
+        if (Vector2.Distance(transform.position, mainCamera.GetComponent<levelCreator>().wayPoints.Last().transform.position) < 0.1f)
+        {
+            doDamage();
             Die();
+        }
     }
 }

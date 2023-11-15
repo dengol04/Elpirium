@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 769921156}
   - component: {fileID: 769921155}
   - component: {fileID: 769921154}
+  - component: {fileID: 769921158}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -188,9 +189,9 @@ MonoBehaviour:
   _dataLevel: {fileID: 11400000, guid: 192bcc16537326945bcd4f421afc2197, type: 2}
   _cellPref: {fileID: 3285831135113341554, guid: 75ba8f37501ce6a4d9a07fa4e84be453, type: 3}
   _groundTilesParent: {fileID: 320554145}
-  _enemySpawnerPref: {fileID: 7616859629917773297, guid: 523b4e7a30a4b634195f84e9f9c1a34b, type: 3}
-  _wayPointPref: {fileID: 7843635030625186127, guid: b58206c7181cf8447b48e756ee65f1d2, type: 3}
-  _lastWayPointPref: {fileID: 1674265921651430430, guid: d1f6f687bb0c1b5439745c06d5e20171, type: 3}
+  _enemySpawnerPref: {fileID: 7616859629917773297, guid: 31378d9b660457547aa04972ff6eb652, type: 3}
+  _wayPointPref: {fileID: 7843635030625186127, guid: e3c24e5aa81c07e4e8fe06a600d5c3bf, type: 3}
+  _lastWayPointPref: {fileID: 1674265921651430430, guid: 50873c3a7538da946887e60bca6aecdf, type: 3}
   _wayPointsParent: {fileID: 1777432785}
 --- !u!81 &769921155
 AudioListener:
@@ -258,6 +259,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769921158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769921153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18786c442f5b7f44caf83c015823fa13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelHealth: 20
 --- !u!1 &1692205088
 GameObject:
   m_ObjectHideFlags: 0

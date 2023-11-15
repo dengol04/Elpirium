@@ -9,7 +9,7 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract int Damage { get; }
 
-    public abstract void doDamage(int damage);
+    public abstract void doDamage();
     public abstract void Die();
     public abstract void getDamage(float damage);
     public abstract void Win();

@@ -38,4 +38,5 @@ MonoBehaviour:
   _yPosLastWPoint: 4
   _numsOfWPoints: 32000000
   _enemyPrefs:
-  - {fileID: 5349110288667500601, guid: 5c36d8f52fa467f45828889a6b5f1066, type: 3}
+  - {fileID: 5349110288667500601, guid: 2095631871184f04d9e220a7f46d56a6, type: 3}
+  _wavesEnemyCount: 
