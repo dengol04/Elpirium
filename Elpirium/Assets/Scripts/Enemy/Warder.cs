@@ -9,6 +9,8 @@ public class Warder : Enemy
     float _speed, _health;
     [SerializeField]
     int _damage;
+    [SerializeField]
+    float _award;
 
     private int _nextWaypoint;
 
@@ -53,6 +55,12 @@ public class Warder : Enemy
     public override void Die()
     {
         Destroy(gameObject);
+    }
+
+    public void DieByTower()
+    {
+        Die();
+        mainCamera.GetComponent<Store>().GetMoney(_award);
     }
 
     public override float Health => _health;

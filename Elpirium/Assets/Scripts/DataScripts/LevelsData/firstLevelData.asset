@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: firstLevelData
   m_EditorClassIdentifier: 
   _way:
-  - 00000300000
-  - 00000300000
-  - 00000310000
-  - 00000300100
-  - 00000522222
-  - 00000100000
-  - 00000000000
+  - 0000030000
+  - 0000030000
+  - 0000031000
+  - 0000030010
+  - 0000052222
+  - 0000010000
   _groundSprites:
   - {fileID: 21300000, guid: 83d5e931e4ca79c4c9e5a3e9c7c08186, type: 3}
   - {fileID: 21300000, guid: 015eff33e9c5fb341a14f83440c023f2, type: 3}
@@ -29,14 +28,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 03c00c2aad5ec3d48ad33f9539303e46, type: 3}
   - {fileID: 21300000, guid: 4482c5f1956cc6848959dac85ddc030d, type: 3}
   - {fileID: 21300000, guid: 2f27952fc36745441880e19f0e1c7864, type: 3}
-  _fieldHeight: 7
-  _fieldWidth: 11
+  _fieldHeight: 6
+  _fieldWidth: 10
   _xPosSpawner: 5
   _yPosSpawner: 0
   _initialDirection: {x: 5, y: 5}
-  _xPosLastWPoint: 10
+  _xPosLastWPoint: 9
   _yPosLastWPoint: 4
   _numsOfWPoints: 32000000
   _enemyPrefs:
   - {fileID: 5349110288667500601, guid: 2095631871184f04d9e220a7f46d56a6, type: 3}
   _wavesEnemyCount: 
+  _startMoney: 100
