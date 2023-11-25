@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnPoint : MonoBehaviour
 {
@@ -21,42 +22,66 @@ public class SpawnPoint : MonoBehaviour
 
     private GameObject _enemyParent;
 
-    private List<int>[] eachTypeOfEnemyCountLst;
+    private List<List<int>> eachTypeOfEnemyCountLst;
 
     private int _currentWave;
 
+    [SerializeField]
+    private bool _isWaveButtomPressed = false;
+
+    private GameObject _wavesControllerPanel;
+
     private void Start()
     {
+        enemyListInitial();
+        Debug.Log("Количство элементов в массиве выолн противников: " + eachTypeOfEnemyCountLst.Count);
+        GameObject.Find("textOnWavesControllerButton").GetComponent<Text>().text = "Start the wave";
+        StartCoroutine(wavesSpawn());
+    }
+
+    private void Awake()
+    {
         _enemyParent = GameObject.Find("enemies");
-
         _enemiesPrefs = _dataLevel.EnemyPrefs;
+        eachTypeOfEnemyCountLst = new List<List<int>>(_dataWaves.eachTypeOfEnemyCount.Length);
+        _currentWave = 1;
+        _isSpawnEnemyWorking = false;
+        _isWaveButtomPressed = false;
+        _wavesControllerPanel = GameObject.Find("wavesControllerPanel");
+    }
 
-        eachTypeOfEnemyCountLst = new List<int>[_dataWaves.eachTypeOfEnemyCount.Length];//_dataWaves.eachTypeOfEnemyCount.Length);
+    public void pressedWaveButton()
+    {
+        setWaveButtonToPressed();
+    }
 
+    private void setWaveButtonToPressed()
+    {
+        _isWaveButtomPressed = true;
+        //_wavesControllerPanel.SetActive(false);
+        Debug.Log("Pressed wave button" + _isWaveButtomPressed);
+    }
+
+    private void enemyListInitial()
+    {
         for (int i = 0; i < _dataWaves.eachTypeOfEnemyCount.Length; ++i)
         {
-            eachTypeOfEnemyCountLst[i] = new List<int>();  //.Add(new List<int>());
+            eachTypeOfEnemyCountLst.Add(new List<int>());  //.Add(new List<int>());
             string oneWaweEnemyData = _dataWaves.eachTypeOfEnemyCount[i];
             string[] oneWaweEnemyDataUnits = oneWaweEnemyData.Split(" ");
             for (int j = 0; j < oneWaweEnemyDataUnits.Length; ++j)
-            {               
+            {
                 if (oneWaweEnemyDataUnits[j] != "")
                     eachTypeOfEnemyCountLst[i].Add(int.Parse(oneWaweEnemyDataUnits[j]));
             }
         }
-
-        Debug.Log("Количство элементов в массиве выолн противников: " + eachTypeOfEnemyCountLst.Length);
-
-        _currentWave = 1;
-
-        StartCoroutine(wavesSpawn());
-
     }
 
-    
+    private bool _isSpawnEnemyWorking;
 
     IEnumerator spawnEnemy(int count, EnemyType typeOfEnemy)
     {
+        _isSpawnEnemyWorking = true;
         for (int i = 0; i < count; ++i)
         {
             GameObject newEnemy = new GameObject();
@@ -75,20 +100,33 @@ public class SpawnPoint : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
         }
-
+        _isSpawnEnemyWorking = false;
         yield break;
     }
 
     IEnumerator wavesSpawn()
     {
-        for (int i = 0; i < eachTypeOfEnemyCountLst.Length; ++i)
+        Debug.Log("Starting Wave Spawning" + _isWaveButtomPressed);
+
+        GameObject.Find("textOnWavesControllerButton").GetComponent<Text>().text = "Start the next wave";
+
+        for (int i = 0; i < eachTypeOfEnemyCountLst.Count; ++i)
         {
+
+            //yield return new WaitUntil(() => _isWaveButtomPressed);
+            while (!_isWaveButtomPressed)
+                yield return null;
+            Debug.Log("Зашёл в цикл");
+            _isWaveButtomPressed = false;
+
             for (int j = 1; j < eachTypeOfEnemyCountLst[i].Count; j += 2)
+            {
                 StartCoroutine(spawnEnemy(eachTypeOfEnemyCountLst[i][j], (EnemyType)eachTypeOfEnemyCountLst[i][j - 1]));
+                yield return new WaitUntil(() => !_isSpawnEnemyWorking);
+                yield return new WaitForSeconds(4f);
+            }
 
             Debug.Log($"{i} wave is over");
-
-            yield return new WaitForSeconds(10f);
         }
 
         yield break;
