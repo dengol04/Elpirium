@@ -1,12 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class tower : MonoBehaviour
+public class Tower : MonoBehaviour
 {
     [SerializeField]
-    private float _cost;
+    float _damage;
     [SerializeField]
-    private float _damage;
+    float _attackSpeed; // bps
+    [SerializeField]
+    float _range;
+    [SerializeField]
+    LayerMask _enemyMask;
+
+    private GameObject _target;
+
+   // private void findTarget()
+    //{
+        //RaycastHit2D[] targets = Physics2D.CircleCastAll(transform.position, _range, transform.position, 0, enemyMask)
+   // }
+
 }

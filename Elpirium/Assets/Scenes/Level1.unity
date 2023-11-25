@@ -546,7 +546,7 @@ MonoBehaviour:
   _wayPointPref: {fileID: 7843635030625186127, guid: e3c24e5aa81c07e4e8fe06a600d5c3bf, type: 3}
   _lastWayPointPref: {fileID: 1674265921651430430, guid: 50873c3a7538da946887e60bca6aecdf, type: 3}
   _wayPointsParent: {fileID: 1777432785}
-  _tileWithTowerPref: {fileID: 2256769276760525023, guid: 8098d0401cae08d47b1801f9decd68b7, type: 3}
+  _tileWithTowerPref: {fileID: 2256769276760525023, guid: 03f7d09d7df2fcc438858cadc93aaa57, type: 3}
 --- !u!81 &769921155
 AudioListener:
   m_ObjectHideFlags: 0
@@ -636,10 +636,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 769921153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652ef74a32993fe4bba6f60726baa731, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f3bee84b94cb384d8329185e3f6d724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _storeData: {fileID: 11400000, guid: 4d97d6f30deee314ea4903d1ab0ee1b3, type: 2}
+  _storeData: {fileID: 11400000, guid: 98892379ff7db844897e69f7849947b3, type: 2}
   _textMoney: {fileID: 140860563}
 --- !u!1 &806989580
 GameObject:
