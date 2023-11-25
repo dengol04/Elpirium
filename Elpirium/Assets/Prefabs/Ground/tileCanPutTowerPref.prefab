@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4198307008027493149}
   - component: {fileID: -4290281546871704413}
   - component: {fileID: -4693614163366660696}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: tileCanPutTowerPref
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -80,5 +80,7 @@ public class Store : MonoBehaviour
     public void GetMoney(float award)
     {
         _currentAmountOfMoney += award;
+
+        _textMoney.GetComponent<Text>().text = _currentAmountOfMoney.ToString();
     }
 }

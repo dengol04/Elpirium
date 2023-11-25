@@ -42,7 +42,7 @@ public class Warder : Enemy
     public override void getDamage(float damage)
     {
         if (damage >= _health)
-            Die();
+            DieByTower();
         else
             _health -= damage;
     }
