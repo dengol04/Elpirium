@@ -804,9 +804,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2196195580302433589, guid: 31378d9b660457547aa04972ff6eb652, type: 3}
-        m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
-        m_MethodName: pressedWaveButton
+      - m_Target: {fileID: 769921161}
+        m_TargetAssemblyTypeName: waveControllerButton, Assembly-CSharp
+        m_MethodName: pressButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1012,6 +1012,7 @@ GameObject:
   - component: {fileID: 769921158}
   - component: {fileID: 769921159}
   - component: {fileID: 769921160}
+  - component: {fileID: 769921161}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1147,6 +1148,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonsToDeactivate:
   - {fileID: 310942267}
+--- !u!114 &769921161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769921153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2172cee875a048945a8dfa33b040c5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonText: {fileID: 689830942}
+  _wavesControllerPanel: {fileID: 732262920}
 --- !u!1 &806989580
 GameObject:
   m_ObjectHideFlags: 0

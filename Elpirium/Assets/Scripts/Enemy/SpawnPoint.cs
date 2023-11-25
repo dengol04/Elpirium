@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SpawnPoint : MonoBehaviour
@@ -26,16 +27,12 @@ public class SpawnPoint : MonoBehaviour
 
     private int _currentWave;
 
-    [SerializeField]
-    private bool _isWaveButtomPressed = false;
-
-    private GameObject _wavesControllerPanel;
+    private GameObject _mainCamera;
 
     private void Start()
     {
         enemyListInitial();
         Debug.Log("Количство элементов в массиве выолн противников: " + eachTypeOfEnemyCountLst.Count);
-        GameObject.Find("textOnWavesControllerButton").GetComponent<Text>().text = "Start the wave";
         StartCoroutine(wavesSpawn());
     }
 
@@ -46,21 +43,9 @@ public class SpawnPoint : MonoBehaviour
         eachTypeOfEnemyCountLst = new List<List<int>>(_dataWaves.eachTypeOfEnemyCount.Length);
         _currentWave = 1;
         _isSpawnEnemyWorking = false;
-        _isWaveButtomPressed = false;
-        _wavesControllerPanel = GameObject.Find("wavesControllerPanel");
+        _mainCamera = GameObject.Find("Main Camera");
     }
 
-    public void pressedWaveButton()
-    {
-        setWaveButtonToPressed();
-    }
-
-    private void setWaveButtonToPressed()
-    {
-        _isWaveButtomPressed = true;
-        //_wavesControllerPanel.SetActive(false);
-        Debug.Log("Pressed wave button" + _isWaveButtomPressed);
-    }
 
     private void enemyListInitial()
     {
@@ -105,19 +90,10 @@ public class SpawnPoint : MonoBehaviour
     }
 
     IEnumerator wavesSpawn()
-    {
-        Debug.Log("Starting Wave Spawning" + _isWaveButtomPressed);
-
-        GameObject.Find("textOnWavesControllerButton").GetComponent<Text>().text = "Start the next wave";
-
+    { 
         for (int i = 0; i < eachTypeOfEnemyCountLst.Count; ++i)
         {
-
-            //yield return new WaitUntil(() => _isWaveButtomPressed);
-            while (!_isWaveButtomPressed)
-                yield return null;
-            Debug.Log("Зашёл в цикл");
-            _isWaveButtomPressed = false;
+            yield return new WaitUntil(() => _mainCamera.GetComponent<waveControllerButton>().isPressed);
 
             for (int j = 1; j < eachTypeOfEnemyCountLst[i].Count; j += 2)
             {
@@ -127,7 +103,11 @@ public class SpawnPoint : MonoBehaviour
             }
 
             Debug.Log($"{i} wave is over");
+            if (i < eachTypeOfEnemyCountLst.Count - 1)
+                _mainCamera.GetComponent<waveControllerButton>().unpressButton();
         }
+
+        //SceneManager.LoadScene("Win");
 
         yield break;
     }
