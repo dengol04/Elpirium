@@ -11,9 +11,17 @@ public class pauseAndReset : MonoBehaviour
     [SerializeField]
     private Button[] _buttonsToDeactivate;
 
+    [SerializeField]
+    private GameObject _pauseMenuPanel;
+
     private void Awake()
     {
         _isPaused = false;
+    }
+
+    private void Start()
+    {
+        _pauseMenuPanel.SetActive(false);
     }
 
     public void resetLevel()
@@ -32,6 +40,8 @@ public class pauseAndReset : MonoBehaviour
             foreach (var b in _buttonsToDeactivate)
                 b.interactable = false;
 
+            _pauseMenuPanel.SetActive(true);
+
             Debug.Log("Поставлена пауза");
         }
         else
@@ -39,7 +49,14 @@ public class pauseAndReset : MonoBehaviour
             Time.timeScale = 1;
             foreach (var b in _buttonsToDeactivate)
                 b.interactable = true;
+
+            _pauseMenuPanel.SetActive(false);
         }
+    }
+
+    public void returnToMainMenu()
+    {
+        SceneManager.LoadScene("menu");
     }
 
 }
