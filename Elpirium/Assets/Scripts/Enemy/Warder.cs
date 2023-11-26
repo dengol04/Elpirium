@@ -12,6 +12,8 @@ public class Warder : Enemy
     int _damage;
     [SerializeField]
     float _award;
+    [SerializeField]
+    GameObject _spawnPointPref;
 
 
 
@@ -71,6 +73,7 @@ public class Warder : Enemy
     public override void Die()
     {
         Destroy(gameObject);
+        _spawnPointPref.GetComponent<SpawnPoint>().killEnemy();
     }
 
     public void DieByTower()

@@ -29,11 +29,25 @@ public class SpawnPoint : MonoBehaviour
 
     private GameObject _mainCamera;
 
+    private static int _enemyAmount;
+
+    public int enemyAmount => _enemyAmount;
+
     private void Start()
     {
         enemyListInitial();
+        setEnemyAmount();
         Debug.Log("Количство элементов в массиве выолн противников: " + eachTypeOfEnemyCountLst.Count);
         StartCoroutine(wavesSpawn());
+    }
+
+    public void killEnemy()
+    {
+        if (--_enemyAmount <= 0)
+        {
+            Debug.Log(_enemyAmount);
+            SceneManager.LoadScene("Win");
+        }
     }
 
     private void Awake()
@@ -46,6 +60,14 @@ public class SpawnPoint : MonoBehaviour
         _mainCamera = GameObject.Find("Main Camera");
     }
 
+    private void setEnemyAmount()
+    {
+        for (int i = 0; i < eachTypeOfEnemyCountLst.Count; ++i)
+            for (int j = 1; j < eachTypeOfEnemyCountLst[i].Count; j += 2)
+            {
+                _enemyAmount += eachTypeOfEnemyCountLst[i][j];
+            }
+    }
 
     private void enemyListInitial()
     {
