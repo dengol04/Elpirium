@@ -11,7 +11,6 @@
 ExportedObj/
 .consulo/
 .log
-.meta
 .vsconfig
 *.csproj
 *.unityproj
@@ -27,7 +26,6 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
-*.meta
 
 *.apk
 *.aab
