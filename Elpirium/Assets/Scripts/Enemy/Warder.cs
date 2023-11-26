@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Warder : Enemy
 {
@@ -12,14 +13,29 @@ public class Warder : Enemy
     [SerializeField]
     float _award;
 
+
+
+    private float _currentHealth;
+
     private int _nextWaypoint;
 
     private GameObject mainCamera;
+
+    private void Awake()
+    {
+        _currentHealth = _health;
+    }
+
+    private void updateHealthBar()
+    {
+        gameObject.transform.GetChild(0).gameObject.GetComponentInChildren<Slider>().value = _currentHealth;
+    }
 
     void Start()
     {
         _nextWaypoint = 1;
         mainCamera = GameObject.Find("Main Camera");
+        gameObject.transform.GetChild(0).gameObject.GetComponentInChildren<Slider>().maxValue = _health;
     }
 
     public void Move()
@@ -41,10 +57,10 @@ public class Warder : Enemy
 
     public override void getDamage(float damage)
     {
-        if (damage >= _health)
+        if (damage >= _currentHealth)
             DieByTower();
         else
-            _health -= damage;
+            _currentHealth -= damage;
     }
 
     public override void doDamage()
@@ -63,13 +79,14 @@ public class Warder : Enemy
         mainCamera.GetComponent<Store>().GetMoney(_award);
     }
 
-    public override float Health => _health;
+    public override float Health => _currentHealth;
 
     public override int Damage => _damage;
 
 
     void Update()
     {
+        updateHealthBar();
         Move();
         changeDirection();
         Win();
