@@ -74,5 +74,4 @@ public class Tower : MonoBehaviour
     {
         return Vector2.Distance(_target.transform.position, transform.position) <= _range;
     }
-
 }
