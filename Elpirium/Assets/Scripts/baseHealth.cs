@@ -32,6 +32,6 @@ public class baseHealth : MonoBehaviour
     {
         //Debug.Log("Game Over");
 
-        //SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("GameOver");
     }
 }

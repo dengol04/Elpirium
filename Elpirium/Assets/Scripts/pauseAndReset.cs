@@ -28,7 +28,10 @@ public class pauseAndReset : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
+    public void resetLevelAfterDeath()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
+    }
     public void tooglePause()
     {
         _isPaused = !_isPaused;
