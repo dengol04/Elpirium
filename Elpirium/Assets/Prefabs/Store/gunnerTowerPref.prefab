@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 907578742599304927}
   - component: {fileID: 1100239214212155274}
-  - component: {fileID: -880577965208257577}
+  - component: {fileID: 3421878753381252883}
   m_Layer: 0
   m_Name: gunnerTowerPref
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-880577965208257577
+--- !u!114 &3421878753381252883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b4a746049def447a282beab7318b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
-  _attackSpeed: 1
+  _damage: 5
+  _attackSpeed: 2
   _range: 4
   _enemyMask:
     serializedVersion: 2
