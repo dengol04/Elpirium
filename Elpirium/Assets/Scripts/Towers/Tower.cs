@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class Tower : MonoBehaviour
+public class tower : MonoBehaviour
 {
     [SerializeField]
     float _damage;
