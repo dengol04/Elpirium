@@ -19,6 +19,7 @@ MonoBehaviour:
   - 0000030010
   - 0000052222
   - 0000010000
+  - 0000000000
   _groundSprites:
   - {fileID: 21300000, guid: 0f9b79c244737f3439a6eb56b54afb51, type: 3}
   - {fileID: 21300000, guid: 6a492450e56c7054fa9f9a5f4c8db9f6, type: 3}
@@ -28,7 +29,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 03c00c2aad5ec3d48ad33f9539303e46, type: 3}
   - {fileID: 21300000, guid: a6bb921bb9ec5a64ab3281117f28419a, type: 3}
   - {fileID: 21300000, guid: b184174bb514bef40b0aa79b5c5334b8, type: 3}
-  _fieldHeight: 6
+  _fieldHeight: 7
   _fieldWidth: 10
   _xPosSpawner: 5
   _yPosSpawner: 0

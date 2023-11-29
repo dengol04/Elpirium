@@ -208,8 +208,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 618077479}
-        m_TargetAssemblyTypeName: pauseAndReset, Assembly-CSharp
-        m_MethodName: returnToMainMenu
+        m_TargetAssemblyTypeName: gameOverScr, Assembly-CSharp
+        m_MethodName: loadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -371,11 +371,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 618077474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecc253d134882f144a8c359a3b7e216f, type: 3}
+  m_Script: {fileID: 11500000, guid: 57efb3b50fbe388499c1ad1e19db6549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonsToDeactivate: []
-  _pauseMenuPanel: {fileID: 0}
 --- !u!1 &787395566
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,8 +847,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 618077479}
-        m_TargetAssemblyTypeName: pauseAndReset, Assembly-CSharp
-        m_MethodName: resetLevelAfterDeath
+        m_TargetAssemblyTypeName: gameOverScr, Assembly-CSharp
+        m_MethodName: loadPrevLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
