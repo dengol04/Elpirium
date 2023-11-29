@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ff6aab91e4b7044a332b10586d8965, type: 3}
   m_Name: firstLevelStoreData
   m_EditorClassIdentifier: 
-  _startMoney: 100
+  _startMoney: 175
   _towersPrefs:
   - {fileID: 7671165589326076223, guid: bbd4fbfe91876624196eaac5598f5b62, type: 3}
   _prices:
-  - 25
+  - 75

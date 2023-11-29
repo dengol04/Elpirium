@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 5
   _attackSpeed: 2
-  _range: 4
+  _range: 3.3
   _enemyMask:
     serializedVersion: 2
     m_Bits: 64

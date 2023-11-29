@@ -105,7 +105,7 @@ public class SpawnPoint : MonoBehaviour
             
             //Debug.Log($"{typeOfEnemy.ToString()} has spawned");
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
         }
         _isSpawnEnemyWorking = false;
         yield break;
