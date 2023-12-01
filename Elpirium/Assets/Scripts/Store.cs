@@ -9,23 +9,16 @@ public class Store : MonoBehaviour
 {
     [SerializeField]
     private storeData _storeData;
-
     [SerializeField]
     private GameObject _textMoney;
 
     private TowerType _currentTypeOfTower;
-
     private bool _isTriggered;
-
     private float _currentAmountOfMoney;
-
     private GameObject _mainCamera;
 
-
     public TowerType CurrentTypeOfTower => _currentTypeOfTower;
-
     public float CurrentAmountOfMoney => _currentAmountOfMoney;
-
     public bool IsTriggered => _isTriggered;
 
     private void Start()

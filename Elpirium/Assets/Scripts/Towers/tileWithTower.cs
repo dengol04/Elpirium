@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class tileWithTower : MonoBehaviour
 {
-    private GameObject _mainCamera;
-
     [SerializeField]
     private storeData _storeData;
-
+    
+    private GameObject _mainCamera;
     private bool _isOccupied;
 
     public bool IsOccupied => _isOccupied;
 
-    private void Start()
+    private void Awake()
     {
         _mainCamera = GameObject.Find("Main Camera");
         _isOccupied = false;
@@ -33,9 +32,6 @@ public class tileWithTower : MonoBehaviour
             store.SetIsTrieggeredToFalse();
             foreach (var obj in _mainCamera.GetComponent<levelCreator>().TilesWithTowers)
                 obj.GetComponent<SpriteRenderer>().color = Color.white;
-            //Debug.Log($"Create a {typeOfTower.ToString()} tower");
-            //Debug.Log(store.CurrentAmountOfMoney);
-            //Debug.Log(_mainCamera.GetComponent<levelCreator>().TilesWithTowers.Count);
         }
     }
 }

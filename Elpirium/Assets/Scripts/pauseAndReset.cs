@@ -6,13 +6,12 @@ using UnityEngine.UI;
 
 public class pauseAndReset : MonoBehaviour
 {
-    private bool _isPaused;
-
     [SerializeField]
     private Button[] _buttonsToDeactivate;
-
     [SerializeField]
     private GameObject _pauseMenuPanel;
+
+    private bool _isPaused;
 
     private void Awake()
     {

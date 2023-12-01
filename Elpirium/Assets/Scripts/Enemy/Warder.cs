@@ -15,12 +15,8 @@ public class Warder : Enemy
     [SerializeField]
     GameObject _spawnPointPref;
 
-
-
     private float _currentHealth;
-
     private int _nextWaypoint;
-
     private GameObject mainCamera;
 
     private void Awake()
@@ -45,8 +41,6 @@ public class Warder : Enemy
         transform.position = Vector2.MoveTowards(transform.position, mainCamera.GetComponent<levelCreator>().wayPoints[_nextWaypoint].transform.position, _speed * Time.deltaTime);
     }
 
-    
-
     public void changeDirection()
     { 
         if (Vector2.Distance(transform.position, mainCamera.GetComponent<levelCreator>().wayPoints[_nextWaypoint].transform.position) < 0.6f)
@@ -55,7 +49,6 @@ public class Warder : Enemy
                 _nextWaypoint++;
         }
     }
-
 
     public override void getDamage(float damage)
     {
@@ -83,9 +76,7 @@ public class Warder : Enemy
     }
 
     public override float Health => _currentHealth;
-
     public override int Damage => _damage;
-
 
     void Update()
     {
@@ -94,7 +85,6 @@ public class Warder : Enemy
         changeDirection();
         Win();
     }
-
 
     public override void Win()
     {

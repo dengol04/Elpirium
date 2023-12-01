@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private Transform _target;
-    [SerializeField]
-    private float _speed;
-    [SerializeField]
-    private Rigidbody2D _rigidBody;
+    [Header("References")]
+    [SerializeField] private Rigidbody2D _rigidBody;
 
-    [SerializeField]
-    private float _damage;
+    [Header("Attributes")]
+    [SerializeField] private float _speed;
+    [SerializeField] private float _damage;
+
+    private Transform _target;
 
     public void setTarget(Transform target)
     {
         _target = target;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (_target == null)
             return;

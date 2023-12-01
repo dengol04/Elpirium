@@ -8,19 +8,16 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField]
-    float _damage;
-    [SerializeField]
-    float _attackSpeed; // bps
-    [SerializeField]
-    float _range;
-    [SerializeField]
-    LayerMask _enemyMask;
-    [SerializeField]
-    GameObject _bulletPref;
+    [Header("References")]
+    [SerializeField] LayerMask _enemyMask;
+    [SerializeField] GameObject _bulletPref;
+
+    [Header("Attributes")]
+    [SerializeField] float _damage;
+    [SerializeField] float _attackSpeed; // bps
+    [SerializeField] float _range;
 
     private Transform _target;
-
     private float _timeUntilShoot;
 
     private void Awake()
@@ -28,7 +25,6 @@ public class Tower : MonoBehaviour
         _target = null;
         _timeUntilShoot = 0;
     }
-
 
     private void findNewTarget()
     {

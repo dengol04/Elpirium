@@ -8,26 +8,19 @@ using UnityEngine;
 
 public class levelCreator : MonoBehaviour
 {
-    [SerializeField]
-    private levelData _dataLevel;
-    [SerializeField]
-    private GameObject _cellPref;
-    [SerializeField]
-    private GameObject _groundTilesParent;
-    [SerializeField]
-    private GameObject _enemySpawnerPref, _wayPointPref, _lastWayPointPref;
-    [SerializeField]
-    private GameObject _wayPointsParent;
-    [SerializeField]
-    private GameObject _tileWithTowerPref;
+    [Header("Refernces")]
+    [SerializeField] private levelData _dataLevel;
+    [SerializeField] private GameObject _cellPref;
+    [SerializeField] private GameObject _groundTilesParent;
+    [SerializeField] private GameObject _enemySpawnerPref, _wayPointPref, _lastWayPointPref;
+    [SerializeField] private GameObject _wayPointsParent;
+    [SerializeField] private GameObject _tileWithTowerPref;
 
     private List<GameObject> _tilesWithTowers;
+    private List<GameObject> _wayPoints = new List<GameObject>();
 
     public List<GameObject> TilesWithTowers => _tilesWithTowers;
     public levelData DataLevel => _dataLevel;
-
-    private List<GameObject> _wayPoints = new List<GameObject>();
-
     public List<GameObject> wayPoints => _wayPoints;
 
     private void wayPointsInitial()
@@ -38,7 +31,7 @@ public class levelCreator : MonoBehaviour
         }
     }
 
-    /*private enum TileTypes
+    private enum TileTypes
     {
         Regular,
         Broken,
@@ -48,7 +41,7 @@ public class levelCreator : MonoBehaviour
         RightUp,
         RightDown,
         LeftDown
-    }*/
+    }
 
     void Start()
     {
@@ -62,8 +55,6 @@ public class levelCreator : MonoBehaviour
 
         if (wayPoints.Any(x => x == null))
             throw new ArgumentNullException("Недозаполнил список поинтов");
-
-        //setDirectionsToWayPoints();
     }
 
     void levelBuilding()
@@ -102,8 +93,6 @@ public class levelCreator : MonoBehaviour
                     continue;
                 }
 
-                
-
                 cellInstantiate(j, i, cellPosVector, cellTypeId, false, false);
             }
     }
@@ -134,8 +123,6 @@ public class levelCreator : MonoBehaviour
                                                         newCell.transform.position.y + newCell.GetComponent<SpriteRenderer>().bounds.size.y / 2,
                                                         newCell.transform.position.z);
 
-            //spawnPoint.GetComponent<SpawnPoint>().setInitialDirection(_dataLevel.initialDirection);
-
             _wayPoints[0] = spawnPoint;
             Debug.Log("Added spawn point");
         }
@@ -143,7 +130,7 @@ public class levelCreator : MonoBehaviour
         if (isWayPoint)
         {
             GameObject wayPoint = new GameObject();
-            //= isLastWayPoint ? Instantiate(_lastWayPointPref) : Instantiate(_wayPointPref);
+
             if (isLastWayPoint)
                 wayPoint = Instantiate(_lastWayPointPref);
             else
@@ -160,19 +147,4 @@ public class levelCreator : MonoBehaviour
                 _wayPoints[_dataLevel.numsOfWPoints.ToList().FindIndex(x => x == 50) + 1] = wayPoint;
         }
     }
-    
-    /*void setDirectionsToWayPoints()
-    {
-        for(int i = 1; i < _wayPoints.Count - 1; ++i)
-        {
-            _wayPoints[i].GetComponent<WayPoint>().setNewDirection(_wayPoints[i + 1].transform.position - _wayPoints[i].transform.position);
-            Debug.Log($"Customize {i} way point");
-        }
-
-        if (!_wayPoints[_wayPoints.Count - 2].TryGetComponent<WayPoint>(out var t))
-            _wayPoints[_wayPoints.Count - 1].GetComponent<WayPoint>().setNewDirection(_wayPoints[_wayPoints.Count - 2].GetComponent<SpawnPoint>().initialDirection);
-        else
-            _wayPoints[_wayPoints.Count - 1].GetComponent<WayPoint>().setNewDirection(_wayPoints[_wayPoints.Count - 2].GetComponent<WayPoint>().newDirection);
-    }*/
-
 }

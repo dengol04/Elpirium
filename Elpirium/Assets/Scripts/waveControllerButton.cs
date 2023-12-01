@@ -10,12 +10,10 @@ public class waveControllerButton : MonoBehaviour
     private Text _buttonText;
     [SerializeField]
     private GameObject _wavesControllerPanel;
-
     private void Start()
     {
         _buttonText.text = "Start first wave";
     }
-
 
     private bool _isPressed;
     public bool isPressed => _isPressed;

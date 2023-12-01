@@ -7,6 +7,7 @@ public class storeData : ScriptableObject
 {
     [SerializeField]
     private float _startMoney;
+
     [SerializeField]
     private GameObject[] _towersPrefs;
 
