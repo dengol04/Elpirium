@@ -17,6 +17,8 @@ public class Tower : MonoBehaviour
     [SerializeField] float _attackSpeed; // bps
     [SerializeField] float _range;
 
+    public float range => _range;
+
     private Transform _target;
     private float _timeUntilShoot;
 
