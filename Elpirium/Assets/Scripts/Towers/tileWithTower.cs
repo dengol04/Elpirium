@@ -73,7 +73,7 @@ public class tileWithTower : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (!_store.IsTriggered)
+        if (!_store.IsTriggered || IsOccupied)
             return;
 
         _circleRadOfAttack.enabled = true;
