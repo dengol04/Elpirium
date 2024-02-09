@@ -12,7 +12,7 @@ public class waveControllerButton : MonoBehaviour
     private GameObject _wavesControllerPanel;
     private void Start()
     {
-        _buttonText.text = "Start first wave";
+        _buttonText.text = "Начать волну";
     }
 
     private bool _isPressed;
@@ -27,7 +27,7 @@ public class waveControllerButton : MonoBehaviour
     {
         _isPressed = true;
         _wavesControllerPanel.SetActive(false);
-        _buttonText.text = "Next wave";
+        _buttonText.text = "Следующая волна";
     }
 
     public void unpressButton()
