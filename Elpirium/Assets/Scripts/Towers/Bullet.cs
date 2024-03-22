@@ -30,29 +30,21 @@ public class Bullet : MonoBehaviour
         _rigidBody.velocity = bulletDirection * _speed;
     }
 
-    private IEnumerator freeze(Enemy en, float sec)
-    {
-        en.setSpeed(2);
-        yield return new WaitForSeconds(sec);
-        en.setSpeed(0.5f);
-        yield break;
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Enemy en = collision.gameObject.GetComponent<Enemy>();
         if (en)
         {
-            Destroy(gameObject);
+            Destroy(gameObject);  
             en.getDamage(_damage);
             switch (_debuff)
             {
                 case debuffType.FROZEN:
-                    StartCoroutine(freeze(en, 0.5f));
+                    en.slowed(2);
                     break;
-                default: return;
+                default: break;
             }
-
         }
     }
 }

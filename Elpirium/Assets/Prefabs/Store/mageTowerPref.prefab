@@ -102,5 +102,5 @@ MonoBehaviour:
     m_Bits: 64
   _bulletPref: {fileID: 2124611761704963236, guid: 40387887a24dc8a49bf8ab27a57d76d1, type: 3}
   _damage: 5
-  _attackSpeed: 1
+  _attackSpeed: 0.5
   _range: 4

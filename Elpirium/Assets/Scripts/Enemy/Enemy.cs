@@ -12,6 +12,6 @@ public abstract class Enemy : MonoBehaviour
     public abstract void doDamage();
     public abstract void Die();
     public abstract void getDamage(float damage);
-    public abstract void setSpeed(float divider);
+    public abstract void slowed(float divider);
     public abstract void Win();
 }

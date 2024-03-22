@@ -31,9 +31,20 @@ public class Warder : Enemy
     {
         gameObject.transform.GetChild(0).gameObject.GetComponentInChildren<Slider>().value = _currentHealth;
     }
-    public override void setSpeed(float divider)
+    private void setSpeed(float divider)
     {
-        _currentSpeed = _speed / divider;
+        _currentSpeed = _currentSpeed == _speed ? _speed / divider : _speed;
+        Debug.Log("Warder current speed: " + _currentSpeed);
+    }
+    private IEnumerator slow(float sec, float div)
+    {
+        setSpeed(div);
+        yield return new WaitForSeconds(sec);
+        setSpeed(1 / div);
+    }
+    public override void slowed(float divider)
+    {
+        StartCoroutine(slow(1f, divider));
     }
     void Start()
     {
