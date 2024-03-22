@@ -21,7 +21,7 @@ public class Store : MonoBehaviour
     public float CurrentAmountOfMoney => _currentAmountOfMoney;
     public bool IsTriggered => _isTriggered;
 
-    private void Start()
+    private void Awake()
     {
         _isTriggered = false;
         _currentTypeOfTower = TowerType.Nothing;
