@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TowerType
+enum debuffType
 {
-    Gunner,
-    Mage,
-    Nothing
+    NONE,
+    FROZEN
 }

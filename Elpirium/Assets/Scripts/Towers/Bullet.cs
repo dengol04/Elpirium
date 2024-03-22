@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -10,6 +11,7 @@ public class Bullet : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float _speed;
     [SerializeField] private float _damage;
+    [SerializeField] private debuffType _debuff;
 
     private Transform _target;
 
@@ -28,12 +30,29 @@ public class Bullet : MonoBehaviour
         _rigidBody.velocity = bulletDirection * _speed;
     }
 
+    private IEnumerator freeze(Enemy en, float sec)
+    {
+        en.setSpeed(2);
+        yield return new WaitForSeconds(sec);
+        en.setSpeed(0.5f);
+        yield break;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Enemy>())
+        Enemy en = collision.gameObject.GetComponent<Enemy>();
+        if (en)
         {
             Destroy(gameObject);
-            collision.gameObject.GetComponent<Enemy>().getDamage(_damage);
+            en.getDamage(_damage);
+            switch (_debuff)
+            {
+                case debuffType.FROZEN:
+                    StartCoroutine(freeze(en, 0.5f));
+                    break;
+                default: return;
+            }
+
         }
     }
 }

@@ -49,7 +49,8 @@ public class tileWithTower : MonoBehaviour
     {
         if (tt == TowerType.Nothing)
             return 0;
-
+        Debug.Log("Количество Tower Prefs: " + _storeData.TowerPrefs.Length);
+        Debug.Log("(int)tt: " + (int)tt);
         return _storeData.TowerPrefs[(int)tt].GetComponent<Tower>().range;
     }
 

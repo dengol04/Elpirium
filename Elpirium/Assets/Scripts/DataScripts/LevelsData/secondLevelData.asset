@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4bcfa97b1ab2346ba49b95fc58e304, type: 3}
+  m_Name: secondLevelData
+  m_EditorClassIdentifier: 
+  _groundSprites:
+  - {fileID: 21300000, guid: 5265f00317c76264589e35445687501e, type: 3}
+  - {fileID: 21300000, guid: e91257f3928a9b7449bcb5d4f729d1f0, type: 3}
+  - {fileID: 21300000, guid: dd4dc2f451dc5f34ebe8bf0e8f909c73, type: 3}
+  - {fileID: 21300000, guid: 4d6ee1d770b633c438aa7e2170f5c3e8, type: 3}
+  - {fileID: 21300000, guid: 4771f870261d3c84eb06029055faa6b8, type: 3}
+  - {fileID: 21300000, guid: 123f9bec08993ed44b657850c3b3126f, type: 3}
+  - {fileID: 21300000, guid: 39d0c37f6cada3a44a40e56b9a71a452, type: 3}
+  - {fileID: 21300000, guid: 4124425bd2e1c414d920648843e86181, type: 3}
+  _enemyPrefs:
+  - {fileID: 5349110288667500601, guid: 2095631871184f04d9e220a7f46d56a6, type: 3}
+  _fieldHeight: 8
+  _fieldWidth: 14
+  _xPosSpawner: 5
+  _yPosSpawner: 0
+  _xPosLastWPoint: 13
+  _yPosLastWPoint: 5
+  _numsOfWPoints: 32000000
+  _wavesEnemyCount: 
+  _startMoney: 100
+  _way:
+  - 00000300000000
+  - 00000300000000
+  - 00000300000000
+  - 00000310000000
+  - 00000300000100
+  - 00000522222222
+  - 00000100000000
+  - 00000000000000

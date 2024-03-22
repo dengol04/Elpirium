@@ -50,13 +50,14 @@ public class Store : MonoBehaviour
             obj.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    public void SetCurrentTypeOfTowerToGunner()
+    public void SetCurrentTypeOfTower(int tt)
     {
-        if (_currentAmountOfMoney >= _storeData.Prices[(int)TowerType.Gunner] && _mainCamera.GetComponent<levelCreator>().TilesWithTowers.Find(x => !x.GetComponent<tileWithTower>().IsOccupied) != null)
+        if (_currentAmountOfMoney >= _storeData.Prices[tt] && _mainCamera.GetComponent<levelCreator>().TilesWithTowers.Find(x => !x.GetComponent<tileWithTower>().IsOccupied) != null)
         {
             LightAllTilesWithTowers();
             _isTriggered = true;
-            _currentTypeOfTower = TowerType.Gunner;
+            _currentTypeOfTower = (TowerType)tt;
+            Debug.Log((int)_currentTypeOfTower);
         }
     }
 

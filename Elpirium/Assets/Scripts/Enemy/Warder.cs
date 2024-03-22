@@ -15,6 +15,8 @@ public class Warder : Enemy
     [SerializeField]
     GameObject _spawnPointPref;
 
+
+    private float _currentSpeed;
     private float _currentHealth;
     private int _nextWaypoint;
     private GameObject mainCamera;
@@ -22,13 +24,17 @@ public class Warder : Enemy
     private void Awake()
     {
         _currentHealth = _health;
+        _currentSpeed = _speed;
     }
 
     private void updateHealthBar()
     {
         gameObject.transform.GetChild(0).gameObject.GetComponentInChildren<Slider>().value = _currentHealth;
     }
-
+    public override void setSpeed(float divider)
+    {
+        _currentSpeed = _speed / divider;
+    }
     void Start()
     {
         _nextWaypoint = 1;
@@ -38,7 +44,7 @@ public class Warder : Enemy
 
     public void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, mainCamera.GetComponent<levelCreator>().wayPoints[_nextWaypoint].transform.position, _speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, mainCamera.GetComponent<levelCreator>().wayPoints[_nextWaypoint].transform.position, _currentSpeed * Time.deltaTime);
     }
 
     public void changeDirection()
