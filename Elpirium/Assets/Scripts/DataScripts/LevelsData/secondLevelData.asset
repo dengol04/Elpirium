@@ -24,20 +24,20 @@ MonoBehaviour:
   _enemyPrefs:
   - {fileID: 5349110288667500601, guid: 2095631871184f04d9e220a7f46d56a6, type: 3}
   _fieldHeight: 8
-  _fieldWidth: 14
-  _xPosSpawner: 5
+  _fieldWidth: 12
+  _xPosSpawner: 2
   _yPosSpawner: 0
-  _xPosLastWPoint: 13
-  _yPosLastWPoint: 5
-  _numsOfWPoints: 32000000
+  _xPosLastWPoint: 9
+  _yPosLastWPoint: 0
+  _numsOfWPoints: 3f00000041000000290000002b0000004f00000052000000
   _wavesEnemyCount: 
   _startMoney: 100
   _way:
-  - 00000300000000
-  - 00000300000000
-  - 00000300000000
-  - 00000310000000
-  - 00000300000100
-  - 00000522222222
-  - 00000100000000
-  - 00000000000000
+  - 003000000300
+  - 003000000300
+  - 003000000300
+  - 003062701300
+  - 003131300300
+  - 005240300300
+  - 000000522400
+  - 000000000000

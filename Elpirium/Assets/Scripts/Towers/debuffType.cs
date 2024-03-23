@@ -5,5 +5,6 @@ using UnityEngine;
 enum debuffType
 {
     NONE,
-    FROZEN
+    FROZEN,
+    LIGHTNING
 }

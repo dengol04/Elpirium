@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1100239214212155274}
   - component: {fileID: 3421878753381252883}
   m_Layer: 7
-  m_Name: mageTowerPref
+  m_Name: teslaTowerPref
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8d937bff8a302e04fad1aed44659a1d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8def4efa1b08b5e49a30e125c33a3c48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   _enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  _bulletPref: {fileID: 2124611761704963236, guid: 40387887a24dc8a49bf8ab27a57d76d1, type: 3}
+  _bulletPref: {fileID: 2124611761704963236, guid: 89753618409b15a4ebf62b4039debddf, type: 3}
   _damage: 5
   _attackSpeed: 0.5
   _range: 4

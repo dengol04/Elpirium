@@ -38,6 +38,8 @@ public class Warder : Enemy
     }
     private IEnumerator slow(float sec, float div)
     {
+        if (_currentSpeed == _speed / div)
+            yield break;
         setSpeed(div);
         yield return new WaitForSeconds(sec);
         setSpeed(1 / div);
@@ -60,7 +62,7 @@ public class Warder : Enemy
 
     public void changeDirection()
     { 
-        if (Vector2.Distance(transform.position, mainCamera.GetComponent<levelCreator>().wayPoints[_nextWaypoint].transform.position) < 0.6f)
+        if (Vector2.Distance(transform.position, mainCamera.GetComponent<levelCreator>().wayPoints[_nextWaypoint].transform.position) < 0.1f)
         {
             if (_nextWaypoint + 1 < mainCamera.GetComponent<levelCreator>().wayPoints.Count)
                 _nextWaypoint++;

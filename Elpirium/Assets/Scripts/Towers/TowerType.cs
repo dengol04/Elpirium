@@ -6,5 +6,6 @@ public enum TowerType
 {
     Gunner,
     Mage,
+    Tesla,
     Nothing
 }

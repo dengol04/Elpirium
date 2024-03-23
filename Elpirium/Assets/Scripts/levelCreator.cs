@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class levelCreator : MonoBehaviour
     [SerializeField] private GameObject _enemySpawnerPref, _wayPointPref, _lastWayPointPref;
     [SerializeField] private GameObject _wayPointsParent;
     [SerializeField] private GameObject _tileWithTowerPref;
+
 
     private List<GameObject> _tilesWithTowers;
     private List<GameObject> _wayPoints = new List<GameObject>();
@@ -144,7 +146,7 @@ public class levelCreator : MonoBehaviour
             if (isLastWayPoint)
                 _wayPoints[_wayPoints.Count - 1] = wayPoint;
             else
-                _wayPoints[_dataLevel.numsOfWPoints.ToList().FindIndex(x => x == 50) + 1] = wayPoint;
+                _wayPoints[_dataLevel.numsOfWPoints.ToList().FindIndex(x => x == numOfCell) + 1] = wayPoint;
         }
     }
 }

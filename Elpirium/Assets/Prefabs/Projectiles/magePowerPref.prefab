@@ -140,3 +140,6 @@ MonoBehaviour:
   _speed: 5
   _damage: 15
   _debuff: 1
+  _lMask:
+    serializedVersion: 2
+    m_Bits: 64
