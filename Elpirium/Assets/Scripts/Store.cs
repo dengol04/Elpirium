@@ -35,6 +35,8 @@ public class Store : MonoBehaviour
         _isTriggered = false;
     }
 
+    public void returnMoney(int money) => _currentAmountOfMoney += money;
+
     public void LightAllTilesWithTowers()
     {
         foreach (var obj in _mainCamera.GetComponent<levelCreator>().TilesWithTowers)

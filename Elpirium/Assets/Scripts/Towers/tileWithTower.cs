@@ -15,6 +15,8 @@ public class tileWithTower : MonoBehaviour
     private bool _isOccupied;
     private Store _store;
 
+    private GameObject _towerOnCeil;
+
     public bool IsOccupied => _isOccupied;
 
     private void Awake()
@@ -27,7 +29,9 @@ public class tileWithTower : MonoBehaviour
         _circleRadOfAttack.startColor = Color.white;
         _circleRadOfAttack.endColor = Color.white;
         _circleRadOfAttack.enabled = false;
-    }
+        _towerOnCeil = null;
+        _oldColor = Color.clear;
+}
 
     private void OnMouseDown()
     {
@@ -39,9 +43,15 @@ public class tileWithTower : MonoBehaviour
                                                       transform.position.y + gameObject.GetComponent<SpriteRenderer>().bounds.size.y / 2);
             _store.SpendMoney(_storeData.Prices[(int)typeOfTower]);
             _isOccupied = true;
+            _towerOnCeil = newTower;
             _store.SetIsTrieggeredToFalse();
             foreach (var obj in _mainCamera.GetComponent<levelCreator>().TilesWithTowers)
                 obj.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        else
+        {
+            _store.SpendMoney(-(int)_storeData.Prices[(int)_store.CurrentTypeOfTower] / 10);
+            deleteTower();
         }
     }
 
@@ -72,9 +82,32 @@ public class tileWithTower : MonoBehaviour
         }
     }
 
+    //TODO:
+    private void deleteTower()
+    {
+        if (!_isOccupied)
+            return;
+
+        Destroy(_towerOnCeil);
+        _isOccupied = false;
+        if (_oldColor != Color.clear)
+        {
+            this.GetComponent<SpriteRenderer>().color = _oldColor;
+            _oldColor = Color.clear;
+        }
+
+    }
+    private Color _oldColor;
     private void OnMouseEnter()
     {
-        if (!_store.IsTriggered || IsOccupied)
+        if (IsOccupied)
+        {
+            _oldColor = this.GetComponent<SpriteRenderer>().color;
+            this.GetComponent<SpriteRenderer>().color = Color.red;
+            return;
+        }
+
+        if (!_store.IsTriggered)
             return;
 
         _circleRadOfAttack.enabled = true;
@@ -84,5 +117,10 @@ public class tileWithTower : MonoBehaviour
     private void OnMouseExit()
     {
         _circleRadOfAttack.enabled = false;
+        if (_oldColor != Color.clear)
+        {
+            this.GetComponent<SpriteRenderer>().color = _oldColor;
+            _oldColor = Color.clear;
+        }
     }
 }
