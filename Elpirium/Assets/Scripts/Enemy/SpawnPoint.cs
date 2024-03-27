@@ -84,8 +84,11 @@ public class SpawnPoint : MonoBehaviour
             GameObject newEnemy = new GameObject();
             switch (typeOfEnemy)
             {
-                case EnemyType.Warder:
+                case EnemyType.WARDER:
                     newEnemy = Instantiate(_enemiesPrefs.First(x => x.name == "warderPref"));
+                    break;
+                case EnemyType.GOLEM:
+                    newEnemy = Instantiate(_enemiesPrefs.First(x => x.name == "golemPref"));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("Нет токого врага");

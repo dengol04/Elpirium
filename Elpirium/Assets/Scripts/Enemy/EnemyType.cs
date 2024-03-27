@@ -4,5 +4,6 @@ using UnityEngine;
 
 public enum EnemyType
 {
-    Warder
+    WARDER,
+    GOLEM
 }
