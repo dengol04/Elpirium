@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: secondLevelData
   m_EditorClassIdentifier: 
   _groundSprites:
-  - {fileID: 21300000, guid: 5265f00317c76264589e35445687501e, type: 3}
-  - {fileID: 21300000, guid: e91257f3928a9b7449bcb5d4f729d1f0, type: 3}
-  - {fileID: 21300000, guid: dd4dc2f451dc5f34ebe8bf0e8f909c73, type: 3}
-  - {fileID: 21300000, guid: 4d6ee1d770b633c438aa7e2170f5c3e8, type: 3}
-  - {fileID: 21300000, guid: 4771f870261d3c84eb06029055faa6b8, type: 3}
-  - {fileID: 21300000, guid: 123f9bec08993ed44b657850c3b3126f, type: 3}
-  - {fileID: 21300000, guid: 39d0c37f6cada3a44a40e56b9a71a452, type: 3}
-  - {fileID: 21300000, guid: 4124425bd2e1c414d920648843e86181, type: 3}
+  - {fileID: 21300000, guid: fa540d77d9732bf46bed724971d28224, type: 3}
+  - {fileID: 21300000, guid: 882081aee0b100e4e8e074f5a55dfe52, type: 3}
+  - {fileID: 21300000, guid: f93e5227511e43540bb7857c1857ab07, type: 3}
+  - {fileID: 21300000, guid: 3852a89b5917c1f469620a17c830c99f, type: 3}
+  - {fileID: 21300000, guid: 82782d881d05be2428c060a495af4ff3, type: 3}
+  - {fileID: 21300000, guid: 5d5b1f781b0b5434aa46d2d0d83619e7, type: 3}
+  - {fileID: 21300000, guid: 384cd464628592c47bde14c7f577352b, type: 3}
+  - {fileID: 21300000, guid: 1f5f88b3e23ee9c4a866bcbc16e25483, type: 3}
   _enemyPrefs:
   - {fileID: 5349110288667500601, guid: 2095631871184f04d9e220a7f46d56a6, type: 3}
   _fieldHeight: 8
