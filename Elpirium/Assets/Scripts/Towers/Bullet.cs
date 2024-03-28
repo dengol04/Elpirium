@@ -41,6 +41,10 @@ public class Bullet : MonoBehaviour
         Vector2 bulletDirection = (_target.position - transform.position).normalized;
 
         _rigidBody.velocity = bulletDirection * _speed;
+
+        Vector2 dir = _target.transform.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
     private void findNewTargetForLightning()

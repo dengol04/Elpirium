@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 227935831}
   - component: {fileID: 227935830}
   m_Layer: 5
-  m_Name: teslaTowerButton
+  m_Name: mageTowerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8def4efa1b08b5e49a30e125c33a3c48, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8d937bff8a302e04fad1aed44659a1d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 646245483}
   - component: {fileID: 646245482}
   m_Layer: 5
-  m_Name: teslaCost
+  m_Name: mageCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _storeData: {fileID: 11400000, guid: 40f07ba35716e7e42b262ab480aa534a, type: 2}
-  _typeOfTower: 2
+  _typeOfTower: 1
 --- !u!114 &646245483
 MonoBehaviour:
   m_ObjectHideFlags: 0

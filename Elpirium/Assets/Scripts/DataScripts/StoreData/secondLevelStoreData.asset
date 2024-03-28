@@ -15,9 +15,9 @@ MonoBehaviour:
   _startMoney: 200
   _towersPrefs:
   - {fileID: 7671165589326076223, guid: bbd4fbfe91876624196eaac5598f5b62, type: 3}
+  - {fileID: 7671165589326076223, guid: c99abff88f98b5a4bb994f924a68383f, type: 3}
   - {fileID: 0}
-  - {fileID: 7671165589326076223, guid: 347a34b37a914f64994f0cb167ae7ee2, type: 3}
   _prices:
   - 75
-  - 0
+  - 90
   - 100
