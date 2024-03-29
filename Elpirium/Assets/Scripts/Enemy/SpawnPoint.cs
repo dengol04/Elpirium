@@ -106,11 +106,12 @@ public class SpawnPoint : MonoBehaviour
     private void loadNewScene()
     {
         int maxLevel = PlayerPrefs.GetInt("Level", -1);
+
         if (_dataLevel.CurrentLevel > maxLevel)
-        {
             PlayerPrefs.SetInt("Level", _dataLevel.CurrentLevel + 1);
-            LevelManager.currentLevel = _dataLevel.CurrentLevel + 1;
-        }
+
+        PlayerPrefs.SetInt("currentLevel", _dataLevel.CurrentLevel + 1);
+        Debug.Log("Turning to scene: " + _nameOfNextScene);
         SceneManager.LoadScene(_nameOfNextScene);
     }
 

@@ -2104,7 +2104,7 @@ MonoBehaviour:
   _dataLevel: {fileID: 11400000, guid: 65843e96f0b2d2e4db846f34ca3c9317, type: 2}
   _cellPref: {fileID: 3285831135113341554, guid: 75ba8f37501ce6a4d9a07fa4e84be453, type: 3}
   _groundTilesParent: {fileID: 532171171}
-  _enemySpawnerPref: {fileID: 7616859629917773297, guid: 679685485a7443d4d8b28dc2e021b2c5, type: 3}
+  _enemySpawnerPref: {fileID: 7616859629917773297, guid: 3cd7af839bf34da4294838f3bad9517a, type: 3}
   _wayPointPref: {fileID: 7843635030625186127, guid: e3c24e5aa81c07e4e8fe06a600d5c3bf, type: 3}
   _lastWayPointPref: {fileID: 1674265921651430430, guid: 50873c3a7538da946887e60bca6aecdf, type: 3}
   _wayPointsParent: {fileID: 1726179790}

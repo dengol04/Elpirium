@@ -1009,7 +1009,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2168f9034c52a9c43a30d07f16cf2aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelsAmount: 3
 --- !u!1 &379325232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,7 +2032,6 @@ GameObject:
   - component: {fileID: 935499073}
   - component: {fileID: 935499072}
   - component: {fileID: 935499076}
-  - component: {fileID: 935499075}
   m_Layer: 5
   m_Name: StartGame
   m_TagString: Untagged
@@ -2102,19 +2100,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000061035156, y: -6.023987}
   m_SizeDelta: {x: -489.028, y: -668.018}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &935499075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935499071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2168f9034c52a9c43a30d07f16cf2aaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _levelsAmount: 0
 --- !u!114 &935499076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2291,7 +2276,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 935499075}
+      - m_Target: {fileID: 325682492}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: LoadCurrent
         m_Mode: 1
@@ -4805,7 +4790,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1927891415}
   - component: {fileID: 1927891416}
-  - component: {fileID: 1927891417}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -4849,19 +4833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c03cdb828171764c8ec65dabf64eea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1927891417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927891414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2168f9034c52a9c43a30d07f16cf2aaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _levelsAmount: 0
 --- !u!1 &1934016673
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ public class levelCreator : MonoBehaviour
     private List<GameObject> _tilesWithTowers;
     private List<GameObject> _wayPoints = new List<GameObject>();
 
+    public GameObject enemySpawnerPref => _enemySpawnerPref;
     public List<GameObject> TilesWithTowers => _tilesWithTowers;
     public levelData DataLevel => _dataLevel;
     public List<GameObject> wayPoints => _wayPoints;

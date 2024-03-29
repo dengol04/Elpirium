@@ -12,10 +12,9 @@ public class Warder : Enemy
     int _damage;
     [SerializeField]
     float _award;
-    [SerializeField]
-    GameObject _spawnPointPref;
 
 
+    private GameObject _spawnPointPref;
     private float _currentSpeed;
     private float _currentHealth;
     private int _nextWaypoint;
@@ -23,6 +22,7 @@ public class Warder : Enemy
 
     private void Awake()
     {
+        _spawnPointPref = GameObject.Find("Main Camera").GetComponent<levelCreator>().enemySpawnerPref;
         _currentHealth = _health;
         _currentSpeed = _speed;
     }
