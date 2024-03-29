@@ -13,6 +13,8 @@ public class pauseAndReset : MonoBehaviour
 
     private bool _isPaused;
 
+    public bool isPaused => _isPaused;
+
     private void Awake()
     {
         _isPaused = false;

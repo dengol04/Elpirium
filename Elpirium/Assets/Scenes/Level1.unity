@@ -1147,7 +1147,6 @@ GameObject:
   - component: {fileID: 769921159}
   - component: {fileID: 769921160}
   - component: {fileID: 769921161}
-  - component: {fileID: 769921162}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1301,19 +1300,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 689830942}
   _wavesControllerPanel: {fileID: 732262920}
---- !u!114 &769921162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769921153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2168f9034c52a9c43a30d07f16cf2aaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentLevel: 1
 --- !u!1 &806989580
 GameObject:
   m_ObjectHideFlags: 0

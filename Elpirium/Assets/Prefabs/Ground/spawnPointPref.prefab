@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b124fc0b9e6d146b1aee379ce0f623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBtwSpawn: 4
-  _dataLevel: {fileID: 11400000, guid: 192bcc16537326945bcd4f421afc2197, type: 2}
   _dataWaves: {fileID: 11400000, guid: 494a4d64f50db3942a560d00e50f0d33, type: 2}
-  _isWaveButtomPressed: 0
+  _dataLevel: {fileID: 11400000, guid: 192bcc16537326945bcd4f421afc2197, type: 2}
+  _timeBtwSpawn: 4
+  _nameOfNextScene: Level2

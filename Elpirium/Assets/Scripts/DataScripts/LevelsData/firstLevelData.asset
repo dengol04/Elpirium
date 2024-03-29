@@ -29,7 +29,7 @@ MonoBehaviour:
   _yPosSpawner: 0
   _xPosLastWPoint: 11
   _yPosLastWPoint: 5
-  _numsOfWPoints: 4c000000
+  _numsOfWPoints: 42000000
   _wavesEnemyCount: 
   _startMoney: 100
   _way:
@@ -41,3 +41,4 @@ MonoBehaviour:
   - 000005222222
   - 000001000000
   - 000000000000
+  _currentLevel: 1

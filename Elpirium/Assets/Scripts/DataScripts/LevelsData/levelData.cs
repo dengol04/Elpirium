@@ -22,7 +22,9 @@ public class levelData : ScriptableObject
     [SerializeField] private int[] _wavesEnemyCount;
     [SerializeField] private float _startMoney;
     [SerializeField] private string[] _way;
+    [SerializeField] private int _currentLevel;
 
+    public int CurrentLevel => _currentLevel;
     public string[] Way => _way;
     public Sprite[] GroundSprites => _groundSprites;
     public uint FieldHeight => _fieldHeight;

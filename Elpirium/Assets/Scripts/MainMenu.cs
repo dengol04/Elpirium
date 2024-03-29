@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        PlayerPrefs.DeleteKey("Level");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

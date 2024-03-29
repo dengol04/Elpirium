@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2168f9034c52a9c43a30d07f16cf2aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 0
+  _levelsAmount: 3
 --- !u!1 &379325232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2168f9034c52a9c43a30d07f16cf2aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 0
+  _levelsAmount: 0
 --- !u!114 &935499076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4861,7 +4861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2168f9034c52a9c43a30d07f16cf2aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 0
+  _levelsAmount: 0
 --- !u!1 &1934016673
 GameObject:
   m_ObjectHideFlags: 0

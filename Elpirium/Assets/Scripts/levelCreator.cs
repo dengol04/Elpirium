@@ -55,8 +55,8 @@ public class levelCreator : MonoBehaviour
         if (wayPoints[wayPoints.Count - 1] == null)
             throw new ArgumentNullException("Нет последнего поинта");
 
-        if (wayPoints.Any(x => x == null))
-            throw new ArgumentNullException("Недозаполнил список поинтов");
+        //if (wayPoints.Any(x => x == null))
+            //throw new ArgumentNullException("Недозаполнил список поинтов " + wayPoints.FindIndex(x => x == null));
     }
 
     void levelBuilding()

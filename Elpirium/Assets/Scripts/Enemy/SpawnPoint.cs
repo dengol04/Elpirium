@@ -15,6 +15,7 @@ public class SpawnPoint : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float _timeBtwSpawn;
+    [SerializeField] private string _nameOfNextScene;
     
     private GameObject[] _enemiesPrefs;
     private GameObject _enemyParent;
@@ -37,7 +38,7 @@ public class SpawnPoint : MonoBehaviour
         if (--_enemyAmount <= 0)
         {
             Debug.Log(_enemyAmount);
-            SceneManager.LoadScene("Win");
+            loadNewScene();
         }
     }
 
@@ -102,6 +103,17 @@ public class SpawnPoint : MonoBehaviour
         yield break;
     }
 
+    private void loadNewScene()
+    {
+        int maxLevel = PlayerPrefs.GetInt("Level", -1);
+        if (_dataLevel.CurrentLevel > maxLevel)
+        {
+            PlayerPrefs.SetInt("Level", _dataLevel.CurrentLevel + 1);
+            LevelManager.currentLevel = _dataLevel.CurrentLevel + 1;
+        }
+        SceneManager.LoadScene(_nameOfNextScene);
+    }
+
     IEnumerator wavesSpawn()
     {
         for (int i = 0; i < eachTypeOfEnemyCountLst.Count; ++i)
@@ -120,7 +132,7 @@ public class SpawnPoint : MonoBehaviour
                 _mainCamera.GetComponent<waveControllerButton>().unpressButton();
         }
 
-        SceneManager.LoadScene("Win");
+        loadNewScene();
 
         yield break;
     }
