@@ -13,13 +13,16 @@ public class dialogController : MonoBehaviour
     [SerializeField] private List<string> _sentences;
     [SerializeField] private string _nextSceneName;
     [SerializeField] private GameObject[] _buttonsToGetControl;
+    [SerializeField] private List<string> _namesOfCharacters;
 
     private Text _currentText;
     private int _sentencesCount;
+    private Text _currentCharacter;
 
     private void Awake()
     {
         _currentText = this.GetComponentInChildren<Text>();
+        _currentCharacter = this.transform.GetChild(this.transform.childCount - 1).GetComponent<Text>();
         _sentencesCount = -1;
         //_sentences.Add("Нажмите для продолжения");
     }
@@ -27,6 +30,7 @@ public class dialogController : MonoBehaviour
     private void Start()
     {
         _currentText.text = "Нажмите для продолжения";
+        _currentCharacter.text = "";
         foreach (var b in _buttonsToGetControl)
             b.SetActive(false);
     }
@@ -46,6 +50,7 @@ public class dialogController : MonoBehaviour
 
 
         _currentText.text = _sentences[_sentencesCount];
+        _currentCharacter.text = _namesOfCharacters[_sentencesCount];
 
         if (_sentencesCount == 0)
         {
