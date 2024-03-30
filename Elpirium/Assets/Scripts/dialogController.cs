@@ -18,12 +18,16 @@ public class dialogController : MonoBehaviour
     private Text _currentText;
     private int _sentencesCount;
     private Text _currentCharacter;
+    private List<GameObject> _charactres;
 
     private void Awake()
     {
         _currentText = this.GetComponentInChildren<Text>();
         _currentCharacter = this.transform.GetChild(this.transform.childCount - 1).GetComponent<Text>();
         _sentencesCount = -1;
+        _charactres = new List<GameObject>();
+        for (int i = 0; i < GameObject.Find("characters").transform.childCount; ++i)
+            _charactres.Add(GameObject.Find("characters").transform.GetChild(i).gameObject);
         //_sentences.Add("Нажмите для продолжения");
     }
 
@@ -33,6 +37,14 @@ public class dialogController : MonoBehaviour
         _currentCharacter.text = "";
         foreach (var b in _buttonsToGetControl)
             b.SetActive(false);
+        foreach (var c in _charactres)
+            c.SetActive(false);
+    }
+
+    private void updateCharacters()
+    {
+        foreach (var c in _charactres)
+            c.GetComponent<dialogCharacterScript>().updateActiveOfCharacter(_sentencesCount);
     }
 
     public void turnNextSentence()
@@ -48,6 +60,7 @@ public class dialogController : MonoBehaviour
             return;
         }
 
+        updateCharacters();
 
         _currentText.text = _sentences[_sentencesCount];
         _currentCharacter.text = _namesOfCharacters[_sentencesCount];
@@ -67,6 +80,8 @@ public class dialogController : MonoBehaviour
     {
         if (_sentencesCount > 0)
             _currentText.text = _sentences[--_sentencesCount];
+
+        updateCharacters();
 
         if (_sentencesCount == 0)
             _buttonsToGetControl.First(x => x.name == "back").SetActive(false);
