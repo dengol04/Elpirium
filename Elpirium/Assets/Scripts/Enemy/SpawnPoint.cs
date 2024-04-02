@@ -91,13 +91,16 @@ public class SpawnPoint : MonoBehaviour
                 case EnemyType.GOLEM:
                     newEnemy = Instantiate(_enemiesPrefs.First(x => x.name == "golemPref"));
                     break;
+                case EnemyType.ELITEWARDER:
+                    newEnemy = Instantiate(_enemiesPrefs.First(x => x.name == "eliteWarderPref"));
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException("Нет токого врага");
             }
             newEnemy.transform.SetParent(_enemyParent.transform, false);
             newEnemy.transform.position = transform.position; 
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
         }
         _isSpawnEnemyWorking = false;
         yield break;
@@ -132,8 +135,8 @@ public class SpawnPoint : MonoBehaviour
             if (i < eachTypeOfEnemyCountLst.Count - 1)
                 _mainCamera.GetComponent<waveControllerButton>().unpressButton();
         }
-
-        loadNewScene();
+        if (_enemyAmount <= 0)
+            loadNewScene();
 
         yield break;
     }

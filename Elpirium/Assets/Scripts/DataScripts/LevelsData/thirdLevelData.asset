@@ -22,7 +22,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 39d0c37f6cada3a44a40e56b9a71a452, type: 3}
   - {fileID: 21300000, guid: 4124425bd2e1c414d920648843e86181, type: 3}
   _enemyPrefs:
+  - {fileID: 5349110288667500601, guid: 2095631871184f04d9e220a7f46d56a6, type: 3}
   - {fileID: 5349110288667500601, guid: 5df0073bbef796e458caacf1b6ae7e26, type: 3}
+  - {fileID: 5349110288667500601, guid: 3641b0eeca8e6b74ab4d721b7e3d80df, type: 3}
   _fieldHeight: 8
   _fieldWidth: 12
   _xPosSpawner: 9

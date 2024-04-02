@@ -100,11 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f95f87867cbbf47aa211d454c407f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2.5
-  _health: 1
-  _damage: 4
-  _award: 5
-  _spawnPointPref: {fileID: 7616859629917773297, guid: 31378d9b660457547aa04972ff6eb652, type: 3}
+  _speed: 1
+  _health: 60
+  _damage: 7
+  _award: 30
 --- !u!61 &-1777683916292711274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -118,18 +117,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07910061, y: 0.21877408}
+  m_Offset: {x: 0.0694834, y: 0.69093144}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.45, y: 0.3}
-    oldSize: {x: 3, y: 3}
+    pivot: {x: 0.35, y: 0.3}
+    oldSize: {x: 2.4, y: 2.4}
     newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1166701, y: 2.3881707}
+  m_Size: {x: 1.0354083, y: 1.7002971}
   m_EdgeRadius: 0
 --- !u!50 &-2104860565467068196
 Rigidbody2D:
@@ -181,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1229670318683302734, guid: eb86afa73df68bf4e8d1e0a7b9646489, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.024738
+      value: 0.024738312
       objectReference: {fileID: 0}
     - target: {fileID: 1229670318683302734, guid: eb86afa73df68bf4e8d1e0a7b9646489, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -297,11 +296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6143877618811652116, guid: eb86afa73df68bf4e8d1e0a7b9646489, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.01
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 6143877618811652116, guid: eb86afa73df68bf4e8d1e0a7b9646489, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.81
+      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: 6143877618811652116, guid: eb86afa73df68bf4e8d1e0a7b9646489, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

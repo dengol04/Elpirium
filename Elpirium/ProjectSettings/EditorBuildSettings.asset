@@ -24,11 +24,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2.unity
     guid: c264a300fdb69f246851b479df403fd3
   - enabled: 1
+    path: Assets/Scenes/dialog2_2.unity
+    guid: 7d0eea987f2f79a428702a76a673cf47
+  - enabled: 1
     path: Assets/Scenes/dialog3.unity
     guid: 120c72178588d094282c7c21295ee9b1
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 2c1e3d91aa9bc684b842429bd1f6d6f7
+  - enabled: 1
+    path: Assets/Scenes/dialog3_2.unity
+    guid: e2aacabe5299eda42a50b4d360940939
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 51cd5eba2b788b64dae6b8632c19e492

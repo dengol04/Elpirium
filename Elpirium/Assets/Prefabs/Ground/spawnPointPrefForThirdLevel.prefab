@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b124fc0b9e6d146b1aee379ce0f623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dataWaves: {fileID: 11400000, guid: 81ae64336fcef1e4fb9303b06a8fdcd9, type: 2}
+  _dataWaves: {fileID: 11400000, guid: 0dae2aeb9a9e52c469b73bbe82ce6084, type: 2}
   _dataLevel: {fileID: 11400000, guid: 65843e96f0b2d2e4db846f34ca3c9317, type: 2}
   _timeBtwSpawn: 4
-  _nameOfNextScene: Win
+  _nameOfNextScene: dialog3_2

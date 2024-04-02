@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -76,10 +75,14 @@ public class dialogController : MonoBehaviour
             _buttonsToGetControl.First(x => x.name == "farther").GetComponent<Text>().color = Color.red;
     }
 
+    public void skip() => SceneManager.LoadScene(_nextSceneName);
+
     public void turnPrevSentence()
     {
         if (_sentencesCount > 0)
             _currentText.text = _sentences[--_sentencesCount];
+
+        _currentCharacter.text = _namesOfCharacters[_sentencesCount];
 
         updateCharacters();
 

@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
     {
         _countHowManyEnemiesCanShoot = 3;
         //_firedEnemies = new List<Transform>();
+        countFiredEnemies = 0;
     }
 
     public void setTarget(Transform target)
@@ -60,10 +61,11 @@ public class Bullet : MonoBehaviour
         _target = targets.Length >= 1 ? targets[0].transform : null;
     }
 
+    private int countFiredEnemies;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Enemy en = collision.gameObject.GetComponent<Enemy>();
-        if (en)
+        if (en && countFiredEnemies == 0)
         {
             _firedEnemies.Add(en.transform);
             en.getDamage(_damage);
@@ -83,6 +85,8 @@ public class Bullet : MonoBehaviour
                     break;
                 default: break;
             }
+            _firedEnemies.Clear();
+            countFiredEnemies++;
             Destroy(gameObject);
         }
     }

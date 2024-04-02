@@ -10,10 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93ff6aab91e4b7044a332b10586d8965, type: 3}
-  m_Name: firstLevelStoreData
+  m_Name: thirdLevelStoreData
   m_EditorClassIdentifier: 
-  _startMoney: 170
+  _startMoney: 210
   _towersPrefs:
   - {fileID: 7671165589326076223, guid: bbd4fbfe91876624196eaac5598f5b62, type: 3}
+  - {fileID: 7671165589326076223, guid: c99abff88f98b5a4bb994f924a68383f, type: 3}
+  - {fileID: 7671165589326076223, guid: 347a34b37a914f64994f0cb167ae7ee2, type: 3}
   _prices:
   - 100
+  - 150
+  - 200

@@ -47,4 +47,4 @@ MonoBehaviour:
   _dataWaves: {fileID: 11400000, guid: 81ae64336fcef1e4fb9303b06a8fdcd9, type: 2}
   _dataLevel: {fileID: 11400000, guid: b524a57096747754197d2d0f5e418be0, type: 2}
   _timeBtwSpawn: 4
-  _nameOfNextScene: Win
+  _nameOfNextScene: dialog2_2
