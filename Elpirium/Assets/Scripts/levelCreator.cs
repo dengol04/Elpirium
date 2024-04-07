@@ -105,6 +105,9 @@ public class levelCreator : MonoBehaviour
     {
         GameObject newCell = cellTypeId == 1 ? Instantiate(_tileWithTowerPref) : Instantiate(_cellPref);
 
+
+        newCell.GetComponent<BoxCollider2D>().autoTiling = !newCell.GetComponent<BoxCollider2D>().autoTiling;
+
         if (cellTypeId == 1)
             _tilesWithTowers.Add(newCell);
 

@@ -41,6 +41,7 @@ public class Store : MonoBehaviour
     {
         foreach (var obj in _mainCamera.GetComponent<levelCreator>().TilesWithTowers)
         {
+            obj.GetComponent<BoxCollider2D>().autoTiling = true;
             if (!obj.GetComponent<tileWithTower>().IsOccupied)
                 obj.GetComponent<SpriteRenderer>().color = Color.gray;
         }
