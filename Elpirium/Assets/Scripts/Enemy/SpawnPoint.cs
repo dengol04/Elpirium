@@ -35,11 +35,9 @@ public class SpawnPoint : MonoBehaviour
 
     public void killEnemy()
     {
+        Debug.Log("enemy amount: " + _enemyAmount);
         if (--_enemyAmount <= 0)
-        {
-            Debug.Log(_enemyAmount);
             loadNewScene();
-        }
     }
 
     private void Awake()
@@ -53,6 +51,7 @@ public class SpawnPoint : MonoBehaviour
 
     private void setEnemyAmount()
     {
+        _enemyAmount = 0;
         for (int i = 0; i < eachTypeOfEnemyCountLst.Count; ++i)
             for (int j = 1; j < eachTypeOfEnemyCountLst[i].Count; j += 2)
             {
