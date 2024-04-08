@@ -18,6 +18,9 @@ public class gameOverScr : MonoBehaviour
 
     private void Start()
     {
+        if (GameObject.Find("nextLevelButton") == null)
+            return;
+
         Debug.Log("Current level: " + PlayerPrefs.GetInt("currentLevel"));
         Debug.Log("Levels Amount: " + LevelManager.levelsAmount);
         Debug.Log("Current level <= Levels Amount: " + (PlayerPrefs.GetInt("currentLevel") <= LevelManager.levelsAmount));
@@ -33,6 +36,6 @@ public class gameOverScr : MonoBehaviour
 
     public void loadPrevLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("currentLevel"));
     }
 }

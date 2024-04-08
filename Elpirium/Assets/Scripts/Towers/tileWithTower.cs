@@ -46,7 +46,7 @@ public class tileWithTower : MonoBehaviour
             foreach (var obj in _mainCamera.GetComponent<levelCreator>().TilesWithTowers)
                 obj.GetComponent<SpriteRenderer>().color = Color.white;
         }
-        else if (!_mainCamera.GetComponent<pauseAndReset>().isPaused)
+        else if (!_mainCamera.GetComponent<pauseAndReset>().isPaused && _isOccupied)
         {
             _store.SpendMoney(-(int)_storeData.Prices[(int)_store.CurrentTypeOfTower] / 10);
             deleteTower();
