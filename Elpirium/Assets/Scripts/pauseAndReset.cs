@@ -31,7 +31,7 @@ public class pauseAndReset : MonoBehaviour
     }
     public void resetLevelAfterDeath()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
+        SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("currentLevel"));
     }
     public void tooglePause()
     {

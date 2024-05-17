@@ -30,16 +30,16 @@ public class SpawnPoint : MonoBehaviour
         enemyListInitial();
         setEnemyAmount();
         Debug.Log("Количство элементов в массиве выолн противников: " + eachTypeOfEnemyCountLst.Count);
+        Debug.Log("Количетво противников на уровне: " + _enemyAmount);
         StartCoroutine(wavesSpawn());
+        Time.timeScale = 1;
     }
 
     public void killEnemy()
     {
+        Debug.Log("enemy amount: " + _enemyAmount);
         if (--_enemyAmount <= 0)
-        {
-            Debug.Log(_enemyAmount);
             loadNewScene();
-        }
     }
 
     private void Awake()
@@ -53,6 +53,7 @@ public class SpawnPoint : MonoBehaviour
 
     private void setEnemyAmount()
     {
+        _enemyAmount = 0;
         for (int i = 0; i < eachTypeOfEnemyCountLst.Count; ++i)
             for (int j = 1; j < eachTypeOfEnemyCountLst[i].Count; j += 2)
             {
@@ -120,6 +121,7 @@ public class SpawnPoint : MonoBehaviour
 
     IEnumerator wavesSpawn()
     {
+        _isSpawnEnemyWorking = false;
         for (int i = 0; i < eachTypeOfEnemyCountLst.Count; ++i)
         {
             yield return new WaitUntil(() => _mainCamera.GetComponent<waveControllerButton>().isPressed);
