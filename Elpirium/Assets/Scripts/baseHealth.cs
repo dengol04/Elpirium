@@ -17,6 +17,8 @@ public class baseHealth : MonoBehaviour
         _textAboutHealth.GetComponent<Text>().text = _levelHealth.ToString();
     }
 
+    public float LevelHealth => _levelHealth;
+
     public void getDamage(float damage)
     {
         _levelHealth -= damage;

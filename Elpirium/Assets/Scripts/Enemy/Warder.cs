@@ -84,8 +84,9 @@ public class Warder : Enemy
 
     public override void Die()
     {
+        if (mainCamera.GetComponent<baseHealth>().LevelHealth >= 0)
+            _spawnPointPref.GetComponent<SpawnPoint>().killEnemy();
         Destroy(gameObject);
-        _spawnPointPref.GetComponent<SpawnPoint>().killEnemy();
     }
 
     public void DieByTower()
