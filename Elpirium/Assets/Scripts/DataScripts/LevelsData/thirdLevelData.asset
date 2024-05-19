@@ -25,22 +25,23 @@ MonoBehaviour:
   - {fileID: 5349110288667500601, guid: 2095631871184f04d9e220a7f46d56a6, type: 3}
   - {fileID: 5349110288667500601, guid: 5df0073bbef796e458caacf1b6ae7e26, type: 3}
   - {fileID: 5349110288667500601, guid: 3641b0eeca8e6b74ab4d721b7e3d80df, type: 3}
-  _fieldHeight: 8
-  _fieldWidth: 12
-  _xPosSpawner: 9
+  _fieldHeight: 9
+  _fieldWidth: 13
+  _xPosSpawner: 10
   _yPosSpawner: 0
-  _xPosLastWPoint: 5
-  _yPosLastWPoint: 7
-  _numsOfWPoints: 220000001a0000003200000038000000500000004e000000
+  _xPosLastWPoint: 6
+  _yPosLastWPoint: 8
+  _numsOfWPoints: 320000002a000000440000004a0000006400000062000000
   _wavesEnemyCount: 
   _startMoney: 100
   _way:
-  - 000000000300
-  - 000100010300
-  - 062222222400
-  - 030010100000
-  - 052222271000
-  - 000101030000
-  - 000006241000
-  - 000003000000
+  - 00000000003000
+  - 00000000003000
+  - 00001000103000
+  - 00622222224000
+  - 00300101000000
+  - 00522222710000
+  - 00001010300000
+  - 00000062410000
+  - 00000030000000
   _currentLevel: 3
