@@ -72,7 +72,10 @@ public class Warder : Enemy
     public override void getDamage(float damage)
     {
         if (damage >= _currentHealth && _currentHealth > 0)
+        {
+            _currentHealth -= damage;
             DieByTower();
+        }
         else
             _currentHealth -= damage;
     }
@@ -84,9 +87,9 @@ public class Warder : Enemy
 
     public override void Die()
     {
+        Destroy(gameObject);
         if (mainCamera.GetComponent<baseHealth>().LevelHealth >= 0)
             _spawnPointPref.GetComponent<SpawnPoint>().killEnemy();
-        Destroy(gameObject);
     }
 
     public void DieByTower()
