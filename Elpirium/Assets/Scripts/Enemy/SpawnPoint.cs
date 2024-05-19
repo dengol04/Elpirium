@@ -38,7 +38,7 @@ public class SpawnPoint : MonoBehaviour
     public void killEnemy()
     {
         Debug.Log("enemy amount: " + _enemyAmount);
-        if (--_enemyAmount <= 0)
+        if (--_enemyAmount < 0)
             loadNewScene();
     }
 
@@ -137,7 +137,7 @@ public class SpawnPoint : MonoBehaviour
             if (i < eachTypeOfEnemyCountLst.Count - 1)
                 _mainCamera.GetComponent<waveControllerButton>().unpressButton();
         }
-        if (_enemyAmount <= 0)
+        if (_enemyAmount < 0)
             loadNewScene();
 
         yield break;
