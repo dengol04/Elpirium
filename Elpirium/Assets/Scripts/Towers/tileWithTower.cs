@@ -80,13 +80,19 @@ public class tileWithTower : MonoBehaviour
         }
     }
 
-    //TODO:
+    private static List<string> bulletPrefsNames = new List<string> { "bullet", "magePower", "teslaLightning" };
+
     private void deleteTower()
     {
         if (!_isOccupied)
             return;
 
         Destroy(_towerOnCeil);
+
+        for (int i = 0; i < bulletPrefsNames.Count; ++i)
+            if (GameObject.Find($"{bulletPrefsNames[i]} + Pref") != null)
+                Destroy(GameObject.Find($"{bulletPrefsNames[i]} + Pref"));
+
         _isOccupied = false;
         if (_oldColor != Color.clear)
         {
