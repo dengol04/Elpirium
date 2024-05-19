@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4693614163366660696}
   - component: {fileID: 3201359907988076900}
   m_Layer: 7
-  m_Name: tileCanPutTowerPrefForSecondLevel
+  m_Name: tileCanPutTowerPrefForThirdLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 882081aee0b100e4e8e074f5a55dfe52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e91257f3928a9b7449bcb5d4f729d1f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,18 +100,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.78661025, y: 0.77925205}
+  m_Offset: {x: 0.6935332, y: 0.6923802}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
-    oldSize: {x: 1.5625, y: 1.5625}
+    oldSize: {x: 1.3888888, y: 1.3888888}
     newSize: {x: 1.5625, y: 1.5625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 1.5732205, y: 1.5585041}
+  m_Size: {x: 1.3870664, y: 1.3847604}
   m_EdgeRadius: 0
 --- !u!114 &-4693614163366660696
 MonoBehaviour:
