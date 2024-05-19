@@ -2110,7 +2110,7 @@ MonoBehaviour:
   _wayPointPref: {fileID: 7843635030625186127, guid: e3c24e5aa81c07e4e8fe06a600d5c3bf, type: 3}
   _lastWayPointPref: {fileID: 1674265921651430430, guid: 50873c3a7538da946887e60bca6aecdf, type: 3}
   _wayPointsParent: {fileID: 1726179790}
-  _tileWithTowerPref: {fileID: 2256769276760525023, guid: cf06cb3e189ce9d4bb8bea09e0897f70, type: 3}
+  _tileWithTowerPref: {fileID: 2256769276760525023, guid: 7c8cbc341929cc740a8770155d127f55, type: 3}
 --- !u!81 &1024517948
 AudioListener:
   m_ObjectHideFlags: 0
