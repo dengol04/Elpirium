@@ -35,4 +35,11 @@ Unity, C#
 \
 [![Elpirium-6.png](https://i.postimg.cc/J7DHmrfT/Elpirium-6.png)](https://postimg.cc/3WhxFTJp)\
 \
+Затем мы можем опробовать новую башню, поставив её на позицию 4. В очередной волне есть голем, которого как раз стоит замедлить. После можно поставить мага на место под номером 3 и стрелков на позиции 5 и 6. Красота!\
+\
+[![Elpirium-6.png](https://i.postimg.cc/0N4X4GK5/Elpirium-6.png)](https://postimg.cc/GBkj8yj6)\
+\
+**Третий уровень**
+
+
 
