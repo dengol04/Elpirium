@@ -13,7 +13,7 @@
 # Технологии
 Unity, C#
 # Гайд
-Здесь вы найдете гайд по прохождению Elpirium.\
+>! Здесь вы найдете гайд по прохождению Elpirium.\
 **Первый уровень**. На картинке вы видите пустое поле первого уровня.\
 \
 [![Elpirium-1.png](https://i.postimg.cc/TYQZ2xMs/Elpirium-1.png)](https://postimg.cc/RN6PGj01)\
