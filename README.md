@@ -14,15 +14,13 @@
 Unity, C#
 # Гайд
 <details>
-  <summary>Spoiler warning</summary>
+  <summary>Первый уровень</summary>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гайд по прохождению игры Elpirium</title>
 </head>
     <body>
-        <h1>Гайд по прохождению Elpirium</h1> 
         <h2>Первый уровень</h2>
         <p>На картинке вы видите пустое поле первого уровня:</p>
         <img src="https://i.postimg.cc/TYQZ2xMs/Elpirium-1.png" alt="Elpirium-1.png">
@@ -32,11 +30,35 @@ Unity, C#
         <img src="https://i.postimg.cc/bNBfHPCt/Elpirium-2.png" alt="Elpirium-2.png">
         <p>...подходит только место под номером 1. Следующим правильным действием будет поставить башню на место 3 или 4, а места 2, 5, 6 будут служить дополнительной силой.</p>
         <img src="https://i.postimg.cc/Dwzvc5PS/Elpirium-3.png" alt="Elpirium-3.png">
+    </body>
+</details>
+
+
+
+<details>
+  <summary>Второй уровень</summary>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    <body>
         <h2>Второй уровень</h2>
         <p>Второй уровень, очевидно, сложнее первого. Появляется маг со способностью замедлять врага. Здесь у нас есть выбор: взять одного мага или двух стрелков. Не задумываясь, мы выбираем двух стрелков, предположим, на позиции 1 и 2, которые точно будут эффективными. Можно и на другие места, но в гайде рассматривается один из способов прохождения.</p>
         <img src="https://i.postimg.cc/J7DHmrfT/Elpirium-6.png" alt="Elpirium-6.png">
         <p>Затем мы можем опробовать новую башню, поставив её на позицию 4. В очередной волне есть голем, которого как раз стоит замедлить. После можно поставить мага на место под номером 3 и стрелков на позиции 5 и 6. Красота!</p>
         <img src="https://i.postimg.cc/0N4X4GK5/Elpirium-6.png" alt="Elpirium-6.png">
+    </body>
+</details>
+
+<details>
+  <summary>Третий уровень</summary>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    <body>
         <h2>Третий уровень</h2>
         <p>Ура, тесла! Её сразу можно опробовать, что мы и сделаем, поставив башню на позицию 3. Это выгодно ещё и потому, что первой же волной на нас идут несколько стражников близко к друг другу. Это нам на руку, так как главной способностью теслы является урон по цепочке из трех врагов.</p>
         <img src="https://i.postimg.cc/4NKyks0J/Elpirium-7.png" alt="Elpirium-7.png">
